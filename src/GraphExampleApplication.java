@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,6 +51,43 @@ public class GraphExampleApplication {
         return false;
     }
 
+    public boolean hasPathBfs(String source, String destination) {
+
+        Node start = getNode(source);
+        Node end = getNode(destination);
+
+        if (start != null && end!= null) {
+            return hasPathBfs(start, end);
+        } else {
+            return false;
+        }
+    }
+
+    public boolean hasPathBfs(Node source, Node destination) {
+
+        LinkedList<Node> nextToVisit = new LinkedList<>();
+
+        HashSet<String> visited = new HashSet<>();
+        nextToVisit.add(source);
+        while (!nextToVisit.isEmpty()) {
+            Node node = nextToVisit.remove();
+            System.out.println(node.getCity());
+            if (node.getCity().equals(destination.getCity())) {
+                return true;
+            }
+            if (visited.contains(node.getCity())) {
+                continue;
+            }
+            visited.add(node.getCity());
+            for (Edge edge : node.getAdjacents()) {
+                nextToVisit.add(edge.getDestination());
+            }
+        }
+        return false;
+    }
+
+
+
     public static void main(String[] args) {
 
         GraphExampleApplication grafo = new GraphExampleApplication();
@@ -57,10 +95,6 @@ public class GraphExampleApplication {
         System.out.println(String.format("From DF to Tlaxcala %s", grafo.hasPathDfs("DF", "Tlaxcala")));
         System.out.println("Distancia Recorrida " + grafo.distancia);
         grafo.distancia = 0  ;
-
-        System.out.println("\n\t RUTA TOLUCA - TLAXCALA \n");
-        System.out.println(String.format("De Toluca a Tlaxcala %s", grafo.hasPathDfs("Toluca", "Tlaxcala")));
-        System.out.println("Distancia Recorrida " + grafo.distancia);
-
+        System.out.println(String.format("From DF to Tlaxcala %s", grafo.hasPathBfs("DF", "Tlaxcala")));
     }
 }
