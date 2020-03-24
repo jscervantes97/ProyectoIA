@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author raidentrance
+ * @author Chuy 7u7
  *
  */
 public class Graph {
@@ -20,5 +20,11 @@ public class Graph {
     @Override
     public String toString() {
         return "Graph [nodes=" + nodes + "]";
+    }
+
+    public void imprimirNodos(){
+        for(Node nodo : nodes){
+            System.out.println("Ciudad: " + nodo.getCity());
+        }
     }
 }

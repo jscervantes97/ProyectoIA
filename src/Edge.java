@@ -35,7 +35,11 @@ public class Edge {
 
     @Override
     public String toString() {
-        return "Edge [origin=" + origin.getCity() + ", destination=" + destination.getCity() + ", distance=" + distance
+        return "Vertice [origin=" + origin.getCity() + ", destination=" + destination.getCity() + ", distance=" + distance
                 + "]";
+    }
+
+    public String obtenerDistancias(){
+        return "Destino " + destination.getCity() + " Distancia " + distance;
     }
 }

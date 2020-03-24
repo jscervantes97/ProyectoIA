@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Node {
@@ -25,4 +27,13 @@ public class Node {
     public String toString() {
         return "Node [city=" + city + ", adjacents=" + adjacents + "]";
     }
+
+    public void ordenarMayor(){
+        Collections.sort(adjacents, (o1, o2) -> {
+            String st1 = String.valueOf(o1.getDistance());
+            String st2 = String.valueOf(o2.getDistance());
+            return st1.compareTo(st2);
+        });
+    }
+
 }

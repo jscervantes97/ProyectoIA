@@ -1,8 +1,4 @@
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-
+import java.util.*;
 
 
 public class GraphExampleApplication {
@@ -25,7 +21,7 @@ public class GraphExampleApplication {
     public boolean hasPathDfs(String source, String destination) {
         Node start = getNode(source);
         Node end = getNode(destination);
-        if (start != null && end!= null) {
+        if (start != null && end != null) {
             return hasPathDfs(start, end, new HashSet());
         } else {
             return false;
@@ -33,16 +29,16 @@ public class GraphExampleApplication {
     }
 
     public double distancia = 0 ;
-    private boolean hasPathDfs(Node source, Node destination, HashSet visited) {
-        if (visited.contains(source.getCity())) {
+    private boolean hasPathDfs(Node origen, Node destination, HashSet visited) {
+        if (visited.contains(origen.getCity())) {
             return false;
         }
-        System.out.println(source.getCity());
-        visited.add(source.getCity());
-        if (source == destination) {
+        System.out.println(origen.getCity());
+        visited.add(origen.getCity());
+        if (origen == destination) {
             return true;
         }
-        for (Edge edge : source.getAdjacents()) {
+        for (Edge edge : origen.getAdjacents()) {
             this.distancia += edge.getDistance();
             if (hasPathDfs(edge.getDestination(), destination, visited)) {
                 return true;
@@ -71,7 +67,7 @@ public class GraphExampleApplication {
         nextToVisit.add(source);
         while (!nextToVisit.isEmpty()) {
             Node node = nextToVisit.remove();
-            System.out.println(node.getCity());
+            //System.out.println(node.getCity());
             if (node.getCity().equals(destination.getCity())) {
                 return true;
             }
@@ -80,6 +76,7 @@ public class GraphExampleApplication {
             }
             visited.add(node.getCity());
             for (Edge edge : node.getAdjacents()) {
+                this.distancia += edge.getDistance();
                 nextToVisit.add(edge.getDestination());
             }
         }
@@ -89,12 +86,53 @@ public class GraphExampleApplication {
 
 
     public static void main(String[] args) {
-
+        int opcion = 0 ;
         GraphExampleApplication grafo = new GraphExampleApplication();
+        Scanner Lee = new Scanner(System.in);
+        System.out.println("********************");
+
+
+
+
+
         System.out.println("\n\t Paths from DF \n");
         System.out.println(String.format("From DF to Tlaxcala %s", grafo.hasPathDfs("DF", "Tlaxcala")));
         System.out.println("Distancia Recorrida " + grafo.distancia);
         grafo.distancia = 0  ;
         System.out.println(String.format("From DF to Tlaxcala %s", grafo.hasPathBfs("DF", "Tlaxcala")));
+        System.out.println("Distancia Recorrida " + grafo.distancia);
+        grafo.distancia = 0  ;
+
+        System.out.println(String.format("From Toluca to Tlaxcala %s", grafo.hasPathDfs("Toluca", "Tlaxcala")));
+        System.out.println("Distancia Recorrida " + grafo.distancia);
+        grafo.distancia = 0  ;
+
+        Node df = new Node("DF");
+        Node toluca = new Node("Toluca");
+        Node cuernavaca = new Node("Cuernavaca");
+        Node puebla = new Node("Puebla");
+        Node tlaxcala = new Node("Tlaxcala");
+        Node cancun = new Node("Cancún");
+
+
+        df.addEdge(new Edge(df, toluca, 100));
+        df.addEdge(new Edge(df, cuernavaca, 90));
+
+        toluca.addEdge(new Edge(toluca, cuernavaca, 150));
+        toluca.addEdge(new Edge(toluca, df, 100));
+        toluca.addEdge(new Edge(toluca, puebla, 350));
+        toluca.addEdge(new Edge(toluca, tlaxcala, 340));
+
+
+        cuernavaca.addEdge(new Edge(cuernavaca, puebla, 100));
+        cuernavaca.addEdge(new Edge(cuernavaca, df, 90));
+
+
+        puebla.addEdge(new Edge(puebla, tlaxcala, 20));
+        puebla.addEdge(new Edge(puebla, toluca, 350));
+
+        System.out.println(toluca.getAdjacents());
+        toluca.ordenarMayor();
+        System.out.println(toluca.getAdjacents());
     }
 }
