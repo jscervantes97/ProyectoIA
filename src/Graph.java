@@ -27,4 +27,10 @@ public class Graph {
             System.out.println("Ciudad: " + nodo.getCity());
         }
     }
+
+    public void ordenarRutas(){
+        for(Node nodo : nodes){
+            nodo.ordenarMayor();
+        }
+    }
 }

@@ -1,0 +1,2 @@
+public class MenuAplicacion {
+}
