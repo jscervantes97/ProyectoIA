@@ -5,7 +5,7 @@
  ****************************************************/
 
 /*
-EJEMPLO DE INPUT
+EJEMPLO DE INPUT checa esto para que veas como funciona
 5 9
 1 2 7
 1 4 2
