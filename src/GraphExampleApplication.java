@@ -6,6 +6,7 @@ public class GraphExampleApplication {
 
     public GraphExampleApplication() {
         graph = MapBuilder.getGraph();
+        //graph.ordenarRutas();
     }
 
     private Node getNode(String city) {
@@ -40,6 +41,9 @@ public class GraphExampleApplication {
         }
         for (Edge edge : origen.getAdjacents()) {
             this.distancia += edge.getDistance();
+            if(visited.contains(edge.getDestination())){
+                this.distancia -= edge.getDistance();
+            }
             if (hasPathDfs(edge.getDestination(), destination, visited)) {
                 return true;
             }
@@ -88,13 +92,13 @@ public class GraphExampleApplication {
     public static void main(String[] args) {
         int opcion = 0 ;
         GraphExampleApplication grafo = new GraphExampleApplication();
+
         Scanner Lee = new Scanner(System.in);
         System.out.println("********************");
 
 
 
-
-
+        /*
         System.out.println("\n\t Paths from DF \n");
         System.out.println(String.format("From DF to Tlaxcala %s", grafo.hasPathDfs("DF", "Tlaxcala")));
         System.out.println("Distancia Recorrida " + grafo.distancia);
@@ -103,36 +107,17 @@ public class GraphExampleApplication {
         System.out.println("Distancia Recorrida " + grafo.distancia);
         grafo.distancia = 0  ;
 
+
         System.out.println(String.format("From Toluca to Tlaxcala %s", grafo.hasPathDfs("Toluca", "Tlaxcala")));
         System.out.println("Distancia Recorrida " + grafo.distancia);
         grafo.distancia = 0  ;
+        */
+        System.out.println(String.format("From nuevoleon to culiacan %s", grafo.hasPathDfs("nuevoleon", "culiacan")));
+        System.out.println("Distancia Recorrida " + grafo.distancia);
+        grafo.distancia = 0 ;
 
-        Node df = new Node("DF");
-        Node toluca = new Node("Toluca");
-        Node cuernavaca = new Node("Cuernavaca");
-        Node puebla = new Node("Puebla");
-        Node tlaxcala = new Node("Tlaxcala");
-        Node cancun = new Node("Cancún");
-
-
-        df.addEdge(new Edge(df, toluca, 100));
-        df.addEdge(new Edge(df, cuernavaca, 90));
-
-        toluca.addEdge(new Edge(toluca, cuernavaca, 150));
-        toluca.addEdge(new Edge(toluca, df, 100));
-        toluca.addEdge(new Edge(toluca, puebla, 350));
-        toluca.addEdge(new Edge(toluca, tlaxcala, 340));
-
-
-        cuernavaca.addEdge(new Edge(cuernavaca, puebla, 100));
-        cuernavaca.addEdge(new Edge(cuernavaca, df, 90));
-
-
-        puebla.addEdge(new Edge(puebla, tlaxcala, 20));
-        puebla.addEdge(new Edge(puebla, toluca, 350));
-
-        System.out.println(toluca.getAdjacents());
-        toluca.ordenarMayor();
-        System.out.println(toluca.getAdjacents());
+        System.out.println(String.format("From cabos to ciudaddelicias %s", grafo.hasPathDfs("cabos", "ciudaddelicias")));
+        System.out.println("Distancia Recorrida " + grafo.distancia);
+        grafo.distancia = 0 ;
     }
 }
