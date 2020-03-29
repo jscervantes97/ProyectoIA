@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author raidentrance
@@ -5,6 +9,9 @@
  */
 public class MapBuilder {
     private static final Graph instance = new Graph();
+
+    public static double distancia = 0 ;
+    public static List<String> ciudadesRecorridas = new ArrayList<>();
 
     private MapBuilder() {
     }
@@ -211,5 +218,95 @@ public class MapBuilder {
          instance.addNode(cancun);
          instance.addNode(tlaxcala);
         return instance;
+    }
+
+    public static Node getNode(String city) {
+        List<Node> nodes = instance.getNodes();
+        for (Node node : nodes) {
+            if (node.getCity().equals(city)) {
+                return node;
+            }
+        }
+        return null;
+    }
+
+    public static boolean hasPathDfs(String source, String destination) {
+        ciudadesRecorridas.clear();
+        Node start = getNode(source);
+        Node end = getNode(destination);
+        if (start != null && end != null) {
+            return hasPathDfs(start, end, new HashSet());
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean hasPathDfs(Node origen, Node destination, HashSet visited) {
+        if (visited.contains(origen.getCity())) {
+            return false;
+        }
+        //System.out.println(origen.getCity());
+        visited.add(origen.getCity());
+        ciudadesRecorridas.add(origen.getCity());
+        if (origen == destination) {
+            return true;
+        }
+        for (Edge edge : origen.getAdjacents()) {
+            distancia += edge.getDistance();
+            if(visited.contains(edge.getDestination())){
+                distancia -= edge.getDistance();
+            }
+            if (hasPathDfs(edge.getDestination(), destination, visited)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean hasPathBfs(String source, String destination) {
+        ciudadesRecorridas.clear();
+        Node start = getNode(source);
+        Node end = getNode(destination);
+
+        if (start != null && end!= null) {
+            return hasPathBfs(start, end);
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean hasPathBfs(Node source, Node destination) {
+
+        LinkedList<Node> nextToVisit = new LinkedList<>();
+
+        HashSet<String> visited = new HashSet<>();
+        nextToVisit.add(source);
+        //System.out.println(source.getCity());
+        while (!nextToVisit.isEmpty()) {
+            Node node = nextToVisit.remove();
+           //System.out.println(node.getCity());
+            if (node.getCity().equals(destination.getCity())) {
+                return true;
+            }
+            if (visited.contains(node.getCity())) {
+                continue;
+            }
+            visited.add(node.getCity());
+            ciudadesRecorridas.add(node.getCity());
+            for (Edge edge : node.getAdjacents()) {
+                distancia += edge.getDistance();
+                nextToVisit.add(edge.getDestination());
+            }
+        }
+        return false;
+    }
+
+    public static List<String> getCiudadesRecorridas(){
+        List<String> lista = new ArrayList<>();
+        lista.add("Total de Ciudades Visitadas" + (ciudadesRecorridas.size()-1));
+        for(String ciudad : ciudadesRecorridas){
+            lista.add(ciudad);
+        }
+        return lista ;
     }
 }

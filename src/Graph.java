@@ -33,4 +33,15 @@ public class Graph {
             nodo.ordenarMayor();
         }
     }
+
+    public List<Edge> getEdges(String ciudad){
+        List<Edge> lista = new ArrayList<>();
+        nodes.forEach(i ->{
+            if(i.getCity().equals(ciudad)){
+               // lista.add(i.getAdjacents());
+               // lista.add(i.getAdjacents());
+            }
+        });
+        return lista;
+    }
 }

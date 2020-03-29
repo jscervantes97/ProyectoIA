@@ -35,7 +35,7 @@ public class Menu extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Container f=this.getContentPane();
         if (e.getSource()==mi1) {
-            new PantallaAlgoritmos();
+            new MenuPantallaAlgoritmos();
             this.dispose();
         }
     }

@@ -3,7 +3,7 @@ import java.util.*;
 
 public class GraphExampleApplication {
     private Graph graph;
-
+    public double distancia = 0 ;
     public GraphExampleApplication() {
         graph = MapBuilder.getGraph();
         //graph.ordenarRutas();
@@ -29,7 +29,6 @@ public class GraphExampleApplication {
         }
     }
 
-    public double distancia = 0 ;
     private boolean hasPathDfs(Node origen, Node destination, HashSet visited) {
         if (visited.contains(origen.getCity())) {
             return false;
@@ -69,9 +68,10 @@ public class GraphExampleApplication {
 
         HashSet<String> visited = new HashSet<>();
         nextToVisit.add(source);
+        //System.out.println(source.getCity());
         while (!nextToVisit.isEmpty()) {
             Node node = nextToVisit.remove();
-            //System.out.println(node.getCity());
+            System.out.println(node.getCity());
             if (node.getCity().equals(destination.getCity())) {
                 return true;
             }
@@ -86,8 +86,6 @@ public class GraphExampleApplication {
         }
         return false;
     }
-
-
 
     public static void main(String[] args) {
         int opcion = 0 ;
@@ -111,12 +109,22 @@ public class GraphExampleApplication {
         System.out.println(String.format("From Toluca to Tlaxcala %s", grafo.hasPathDfs("Toluca", "Tlaxcala")));
         System.out.println("Distancia Recorrida " + grafo.distancia);
         grafo.distancia = 0  ;
-        */
+
         System.out.println(String.format("From nuevoleon to culiacan %s", grafo.hasPathDfs("nuevoleon", "culiacan")));
         System.out.println("Distancia Recorrida " + grafo.distancia);
         grafo.distancia = 0 ;
 
         System.out.println(String.format("From cabos to ciudaddelicias %s", grafo.hasPathDfs("cabos", "ciudaddelicias")));
+        System.out.println("Distancia Recorrida " + grafo.distancia);
+        grafo.distancia = 0 ;
+        */
+        /*
+        System.out.println(String.format("From Puebla to Cuernavaca %s", grafo.hasPathBfs("Puebla", "Cuernavaca")));
+        System.out.println("Distancia Recorrida " + grafo.distancia);
+        grafo.distancia = 0  ;
+         */
+
+        System.out.println(String.format("From culiacan to mochis %s", grafo.hasPathDfs("culiacan", "mochis")));
         System.out.println("Distancia Recorrida " + grafo.distancia);
         grafo.distancia = 0 ;
     }

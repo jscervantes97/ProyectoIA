@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d383ce45-6b74-4bce-bfd5-0737fb134ffc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PantallaAlgoritmos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/GraphExampleApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/GraphExampleApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/MenuAplicacion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/PantallaAlgoritmos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/PantallaAlgoritmos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GraphExampleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphExampleApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MapBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuAplicacion.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuAplicacion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PantallaAlgoritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PantallaAlgoritmos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +44,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Menu">
+  <component name="RunManager" selected="Application.MenuPantallaAlgoritmos">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="ProyectoIA" />
@@ -62,11 +66,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MenuPantallaAlgoritmos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MenuPantallaAlgoritmos" />
+      <module name="ProyectoIA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MenuPantallaAlgoritmos" />
+        <item itemvalue="Application.GraphExampleApplication" />
         <item itemvalue="Application.Menu" />
         <item itemvalue="Application.Application" />
-        <item itemvalue="Application.GraphExampleApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -101,42 +113,42 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1583900085018" />
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1585299717401">
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1585437445083">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585299717401" />
-    <state width="1237" height="91" key="GridCell.Tab.0.bottom" timestamp="1585300560905">
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585437445083" />
+    <state width="1237" height="226" key="GridCell.Tab.0.bottom" timestamp="1585475159813">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="91" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585300560905" />
-    <state width="1237" height="91" key="GridCell.Tab.0.center" timestamp="1585300560905">
+    <state width="1237" height="226" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
+    <state width="1237" height="226" key="GridCell.Tab.0.center" timestamp="1585475159813">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="91" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585300560905" />
-    <state width="1237" height="91" key="GridCell.Tab.0.left" timestamp="1585300560905">
+    <state width="1237" height="226" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
+    <state width="1237" height="226" key="GridCell.Tab.0.left" timestamp="1585475159813">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="91" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585300560905" />
-    <state width="1237" height="91" key="GridCell.Tab.0.right" timestamp="1585300560905">
+    <state width="1237" height="226" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
+    <state width="1237" height="226" key="GridCell.Tab.0.right" timestamp="1585475159813">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="91" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585300560905" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1585297312627">
+    <state width="1237" height="226" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
+    <state width="1237" height="226" key="GridCell.Tab.1.bottom" timestamp="1585475159814">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585297312627" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1585297312626">
+    <state width="1237" height="226" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585475159814" />
+    <state width="1237" height="226" key="GridCell.Tab.1.center" timestamp="1585475159813">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585297312626" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1585297312626">
+    <state width="1237" height="226" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
+    <state width="1237" height="226" key="GridCell.Tab.1.left" timestamp="1585475159813">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585297312626" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1585297312626">
+    <state width="1237" height="226" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
+    <state width="1237" height="226" key="GridCell.Tab.1.right" timestamp="1585475159814">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585297312626" />
+    <state width="1237" height="226" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585475159814" />
     <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1583986740510">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -151,7 +163,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GraphExampleApplication.java</url>
-          <line>37</line>
+          <line>36</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -161,8 +173,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GraphExampleApplication.java</url>
-          <line>42</line>
+          <line>41</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PantallaAlgoritmos.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PantallaAlgoritmos.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/PantallaAlgoritmos.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
+          <line>305</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
