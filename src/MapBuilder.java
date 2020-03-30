@@ -45,7 +45,7 @@ public class MapBuilder {
         Node	fresnillo	= new Node("Fresnillo");
         Node	gomezpalacio	= new Node("Gomez Palacio");
         Node	hermosillo	= new Node("Hermosillo");
-        Node	lapaz	= new Node("Lapaz");
+        Node	lapaz	= new Node("La paz"); //nunca fue una opcion ??
         Node	lareto 	= new Node("Lareto");
         Node	mazatlan	= new Node("Mazatlan");
         Node	mexicali	= new Node("Mexicali");
@@ -75,7 +75,7 @@ public class MapBuilder {
         //-------------------------------
 
         cabos.addEdge(new Edge(cabos,lapaz,146));
-        cabos.addEdge(new Edge(cabos,tijuana,279));
+        cabos.addEdge(new Edge(cabos,tijuana,1279));
 
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,torreon,442));
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,monclova,506));
@@ -102,12 +102,17 @@ public class MapBuilder {
 
         lapaz.addEdge(new Edge(lapaz,lareto,270));
         lapaz.addEdge(new Edge(lapaz,tecate,1120));
+        lapaz.addEdge(new Edge(lapaz,cabos,146));
 
-        lareto .addEdge(new Edge(lareto,mexicali,838));
+        lareto.addEdge(new Edge(lareto,mexicali,838));
+        lareto.addEdge(new Edge(lareto,lapaz,270));
 
         mazatlan.addEdge(new Edge(mazatlan,victoriadurango,200));
 
         mexicali.addEdge(new Edge(mexicali,hermosillo,585));
+        mexicali.addEdge(new Edge(mexicali,tecate,108));
+        mexicali.addEdge(new Edge(mexicali,lareto,838));
+
 
         mochis.addEdge(new Edge(mochis,culiacan,194));
 
@@ -141,9 +146,11 @@ public class MapBuilder {
         tampico.addEdge(new Edge(tampico,ciudadvictoria,3));
 
         tecate.addEdge(new Edge(tecate,mexicali,108));
+        tecate.addEdge(new Edge(tecate,tijuana,39));
 
         tepic.addEdge(new Edge(tepic,sanblas,40));
 
+        tijuana.addEdge(new Edge(tijuana,cabos,1279));
         tijuana.addEdge(new Edge(tijuana,tecate,39));
 
         torreon.addEdge(new Edge(torreon,monclova,253));
