@@ -19,7 +19,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
     private JComboBox comboBoxComparacion;
     private JTextArea consola;
     private JScrollPane scroll;
-    private JLabel labelComparar;
+    private JLabel labelComparar,muestraResultados;
     JRadioButton radio1,radio2,radio3,radio4,radio5;
     private JButton botonViajar,botonComparar;
     private Integer Opcion = 0 ;
@@ -77,7 +77,10 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
         label.setBounds(10,110,200,30);
         add(label);
         labelComparar = new JLabel("Algoritmo Seleccionado: " + nombreAlgoritmo);
-        labelComparar.setBounds(10,140,600,30);
+        labelComparar.setBounds(10,130,600,30);
+        muestraResultados = new JLabel("");
+        muestraResultados.setBounds(10,150,600,30);
+        add(muestraResultados);
         add(labelComparar);
         label = new JLabel("Consola de resultados");
         label.setBounds(10,170,200,30);
@@ -124,9 +127,12 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if(actionEvent.getSource()==botonViajar){
+            String origen=(String)comboBoxOrigen.getSelectedItem();
+            String destino=(String)comboBoxDestino.getSelectedItem();
+            String comparar=(String)comboBoxComparacion.getSelectedItem();
+            MapBuilder.distancia = 0;
             if(opcionComparar == 1){
-                String origen=(String)comboBoxOrigen.getSelectedItem();
-                String destino=(String)comboBoxDestino.getSelectedItem();
+                System.out.print(MapBuilder.distancia);
                 Boolean llego = MapBuilder.hasPathBfs(origen,destino);
                 List<String> lista = new ArrayList<>();
                 String Texto = "";
@@ -139,13 +145,50 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                     Texto += impresion + "\n";
                 }
                 consola.setText(Texto);
+                muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
             }
-            else
+            else if(opcionComparar == 2){
+                System.out.print(MapBuilder.distancia);
+                Boolean llego = MapBuilder.hasPathDfs(origen,destino);
+                List<String> lista = new ArrayList<>();
+                String Texto = "";
+                lista.add("Total de Ciudades Visitadas: " + (MapBuilder.ciudadesRecorridas.size()-1));
+                for(String recorrido : MapBuilder.ciudadesRecorridas){
+                    lista.add(recorrido);
+                }
+                lista.add("Total de KM recorridos: " + MapBuilder.distancia);
+                for(String impresion : lista){
+                    Texto += impresion + "\n";
+                }
+                consola.setText(Texto);
+                muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
+            }
+            else if(opcionComparar == 0)
             {
                 //JOptionPane.showMessageDialog(null,"Selecciona un algoritmo","A caso usted mastica awa?",JOptionPane.WARNING_MESSAGE);
                 JOptionPane.showMessageDialog(null,"Selecciona un algoritmo","A caso usted mastica awa?",JOptionPane.WARNING_MESSAGE);
             }
         }
+    }
+
+    public String imprimeResultados(String nombreAlgoritmo,String nombreAlgoritmoComparar,String origen,String destino,Double distanciaOriginal){
+        String resultados = "";
+        switch (nombreAlgoritmoComparar){
+            case "NINGUNO":
+                resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + MapBuilder.distancia + "Km";
+            break;
+            case "BFS":
+                MapBuilder.distancia = 0 ;
+                MapBuilder.hasPathBfs(origen,destino);
+                resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + distanciaOriginal + "Km Distancia Recorrida por: " + nombreAlgoritmoComparar + " " + MapBuilder.distancia + " Km";
+            break;
+            case "DFS":
+                MapBuilder.distancia = 0 ;
+                MapBuilder.hasPathDfs(origen,destino);
+                resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + distanciaOriginal + "Km Distancia Recorrida por: " + nombreAlgoritmoComparar + " " + MapBuilder.distancia + " Km";
+            break;
+        }
+        return resultados ;
     }
 
     @Override
