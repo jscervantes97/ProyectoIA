@@ -12,25 +12,29 @@ import java.util.Map;
 
 public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, ChangeListener, ItemListener {
     public static Integer opcionComparar = 0;
+    public static String nombreAlgoritmo = "Ninguno";
     private JPanel panelPrincipal ;
     private JComboBox comboBoxOrigen ;
     private JComboBox comboBoxDestino ;
     private JComboBox comboBoxComparacion;
     private JTextArea consola;
     private JScrollPane scroll;
-    JRadioButton radio1,radio2,radio3,radio4;
+    private JLabel labelComparar;
+    JRadioButton radio1,radio2,radio3,radio4,radio5;
     private JButton botonViajar,botonComparar;
     private Integer Opcion = 0 ;
     private Graph grafo1 = MapBuilder.getGraph();
 
     public MenuPantallaAlgoritmos(){
+        super("Algoritmos de Busqueda");
         setLayout(null);
-        setBounds(400,400,600,500);
+        setBounds(400,100,600,500);
         creaMenuInteractivo();
         crearConsola();
         setOpcionesAlgoritos();
 
         setVisible(true);
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
     }
@@ -54,28 +58,33 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
         labelDestino.setBounds(330,30,100,50);
         add(labelDestino);
         add(comboBoxDestino);
+        JLabel label = new JLabel("Comparar con: ");
+        label.setBounds(10,80,100,30);
+        add(label);
         comboBoxComparacion = new JComboBox();
-        comboBoxComparacion.setBounds(10,80,140,30);
-        comboBoxComparacion.addItem("Ninguno");
-        comboBoxComparacion.addItem("BFS");
-        comboBoxComparacion.addItem("DFS");
-        comboBoxComparacion.addItem("Branch and Bounding");
-        comboBoxComparacion.addItem("Dijkstra");
-        comboBoxComparacion.addItem("A*");
+        comboBoxComparacion.setBounds(110,80,150,30);
+        comboBoxComparacion.addItem("NINGUNO");
+        comboBoxComparacion.addItemListener(this);
         add(comboBoxComparacion);
         botonViajar = new JButton("Realizar Recorrido");
-        botonViajar.setBounds(180,80,150,30);
+        botonViajar.setBounds(280,80,150,30);
         botonViajar.addActionListener(this);
         add(botonViajar);
     }
 
     public void crearConsola(){
-        JLabel label = new JLabel("Consola de resultados 7u7");
+        JLabel label = new JLabel("Resultados:");
         label.setBounds(10,110,200,30);
+        add(label);
+        labelComparar = new JLabel("Algoritmo Seleccionado: " + nombreAlgoritmo);
+        labelComparar.setBounds(10,140,600,30);
+        add(labelComparar);
+        label = new JLabel("Consola de resultados");
+        label.setBounds(10,170,200,30);
         add(label);
         consola = new JTextArea();
         scroll = new JScrollPane(consola);
-        scroll.setBounds(10,140,570,250);
+        scroll.setBounds(10,210,570,250);
         add(scroll);
     }
 
@@ -83,27 +92,33 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
         ButtonGroup bg=new ButtonGroup();
         radio1=new JRadioButton("Algoritmo BFS");
         radio1.addChangeListener(this);
-        radio1.setBounds(10,10,120,20);
+        radio1.setBounds(10,1,120,20);
         add(radio1);
+        radio5=new JRadioButton("Algoritmo BFS Mejorado");
+        radio5.addChangeListener(this);
+        radio5.setBounds(10,20,180,20);
+        add(radio5);
         radio2=new JRadioButton("Algoritmo DFS");
         radio2.addChangeListener(this);
-        radio2.setBounds(130,10,120,20);
+        radio2.setBounds(130,1,120,20);
         add(radio2);
         radio3=new JRadioButton("Algoritmo Branch And Bound");
         radio3.addChangeListener(this);
-        radio3.setBounds(250,10,200,20);
+        radio3.setBounds(250,1,200,20);
         add(radio3);
         radio4=new JRadioButton("Algoritmo Dikjstra");
         radio4.addChangeListener(this);
-        radio4.setBounds(450,10,250,20);
+        radio4.setBounds(450,1,250,20);
         add(radio4);
         radio2.addChangeListener(this);
         radio3.addChangeListener(this);
         radio4.addChangeListener(this);
+        radio5.addChangeListener(this);
         bg.add(radio1);
         bg.add(radio2);
         bg.add(radio3);
         bg.add(radio4);
+        bg.add(radio5);
     }
 
     @Override
@@ -112,13 +127,14 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             if(opcionComparar == 1){
                 String origen=(String)comboBoxOrigen.getSelectedItem();
                 String destino=(String)comboBoxDestino.getSelectedItem();
-                MapBuilder.hasPathBfs(origen,destino);
+                Boolean llego = MapBuilder.hasPathBfs(origen,destino);
                 List<String> lista = new ArrayList<>();
                 String Texto = "";
-                lista.add("Total de Ciudades Visitadas" + (MapBuilder.ciudadesRecorridas.size()-1));
+                lista.add("Total de Ciudades Visitadas: " + (MapBuilder.ciudadesRecorridas.size()-1));
                 for(String recorrido : MapBuilder.ciudadesRecorridas){
                     lista.add(recorrido);
                 }
+                lista.add("Total de KM recorridos: " + MapBuilder.distancia);
                 for(String impresion : lista){
                     Texto += impresion + "\n";
                 }
@@ -145,7 +161,13 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 }
             }
         }
-
+         */
+        /*
+        if(itemEvent.getSource() == comboBoxComparacion){
+            String seleccionado=(String)comboBoxComparacion.getSelectedItem();
+            if(!seleccionado.equals("NINGUNO"))
+            labelComparar.setText("Algoritmo Seleccionado: " + nombreAlgoritmo + " Comparar con: " + seleccionado);
+        }
          */
     }
 
@@ -153,15 +175,58 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
     public void stateChanged(ChangeEvent changeEvent) {
         if(radio1.isSelected()){
             opcionComparar = 1 ;
+            nombreAlgoritmo = "BFS";
+            labelComparar.setText("Algoritmo Seleccionado: " + nombreAlgoritmo);
+            comboBoxComparacion.removeAllItems();
+            comboBoxComparacion.addItem("NINGUNO");
+            comboBoxComparacion.addItem("DFS");
+            comboBoxComparacion.addItem("BRANCH AND BOUND");
+            comboBoxComparacion.addItem("DIJKSTRA");
+            comboBoxComparacion.addItem("BFS MEJORADO");
         }
         if(radio2.isSelected()){
             opcionComparar = 2 ;
+            nombreAlgoritmo = "DFS";
+            labelComparar.setText("Algoritmo Seleccionado: " + nombreAlgoritmo);
+            comboBoxComparacion.removeAllItems();
+            comboBoxComparacion.addItem("NINGUNO");
+            comboBoxComparacion.addItem("BFS");
+            comboBoxComparacion.addItem("BRANCH AND BOUND");
+            comboBoxComparacion.addItem("DIJKSTRA");
+            comboBoxComparacion.addItem("BFS MEJORADO");
         }
         if(radio3.isSelected()){
             opcionComparar = 3 ;
+            nombreAlgoritmo = "BRANCH AND BOUND";
+            labelComparar.setText("Algoritmo Seleccionado: " + nombreAlgoritmo);
+            comboBoxComparacion.removeAllItems();
+            comboBoxComparacion.addItem("NINGUNO");
+            comboBoxComparacion.addItem("BFS");
+            comboBoxComparacion.addItem("DFS");
+            comboBoxComparacion.addItem("DIJKSTRA");
+            comboBoxComparacion.addItem("BFS MEJORADO");
         }
         if(radio4.isSelected()) {
             opcionComparar = 4;
+            nombreAlgoritmo = "DIJKSTRA";
+            labelComparar.setText("Algoritmo Seleccionado: " + nombreAlgoritmo);
+            comboBoxComparacion.removeAllItems();
+            comboBoxComparacion.addItem("NINGUNO");
+            comboBoxComparacion.addItem("BFS");
+            comboBoxComparacion.addItem("DFS");
+            comboBoxComparacion.addItem("BRANCH AND BOUND");
+            comboBoxComparacion.addItem("BFS MEJORADO");
+        }
+        if(radio5.isSelected()) {
+            opcionComparar = 5;
+            nombreAlgoritmo = "BFS MEJORADO";
+            labelComparar.setText("Algoritmo Seleccionado: " + nombreAlgoritmo);
+            comboBoxComparacion.removeAllItems();
+            comboBoxComparacion.addItem("NINGUNO");
+            comboBoxComparacion.addItem("BFS");
+            comboBoxComparacion.addItem("DFS");
+            comboBoxComparacion.addItem("BRANCH AND BOUND");
+            comboBoxComparacion.addItem("DIJKSTRA");
         }
     }
 

@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d383ce45-6b74-4bce-bfd5-0737fb134ffc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/GraphExampleApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/GraphExampleApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/PantallaAlgoritmos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/PantallaAlgoritmos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GraphExampleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphExampleApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MapBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PantallaAlgoritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PantallaAlgoritmos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,38 +108,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585437445083" />
-    <state width="1237" height="226" key="GridCell.Tab.0.bottom" timestamp="1585475159813">
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1585549448128">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="226" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
-    <state width="1237" height="226" key="GridCell.Tab.0.center" timestamp="1585475159813">
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585549448128" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1585549448128">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="226" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
-    <state width="1237" height="226" key="GridCell.Tab.0.left" timestamp="1585475159813">
+    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585549448128" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1585549448128">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="226" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
-    <state width="1237" height="226" key="GridCell.Tab.0.right" timestamp="1585475159813">
+    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585549448128" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1585549448128">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="226" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
-    <state width="1237" height="226" key="GridCell.Tab.1.bottom" timestamp="1585475159814">
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585549448128" />
+    <state width="1237" height="226" key="GridCell.Tab.1.bottom" timestamp="1585475301778">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="226" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585475159814" />
-    <state width="1237" height="226" key="GridCell.Tab.1.center" timestamp="1585475159813">
+    <state width="1237" height="226" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585475301778" />
+    <state width="1237" height="226" key="GridCell.Tab.1.center" timestamp="1585475301778">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="226" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
-    <state width="1237" height="226" key="GridCell.Tab.1.left" timestamp="1585475159813">
+    <state width="1237" height="226" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585475301778" />
+    <state width="1237" height="226" key="GridCell.Tab.1.left" timestamp="1585475301777">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="226" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585475159813" />
-    <state width="1237" height="226" key="GridCell.Tab.1.right" timestamp="1585475159814">
+    <state width="1237" height="226" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585475301777" />
+    <state width="1237" height="226" key="GridCell.Tab.1.right" timestamp="1585475301778">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="226" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585475159814" />
+    <state width="1237" height="226" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585475301778" />
     <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1583986740510">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -198,7 +189,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java</url>
-          <line>117</line>
+          <line>132</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
