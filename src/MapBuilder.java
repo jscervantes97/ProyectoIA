@@ -52,7 +52,7 @@ public class MapBuilder {
         Node	mochis	= new Node("Los Mochis");
         Node	monclova	= new Node("Monclova");
         Node	monterrey	= new Node("Monterrey");
-        Node	nogales	= new Node("Nogales");
+        Node	navojoa	= new Node("Navojoa");
         Node	nuevolaredo	= new Node("Nuevo Laredo");
         Node	nuevoleon	= new Node("Nuevo Leon");
         Node	obregon	= new Node("Ciudad Obregon");
@@ -80,6 +80,8 @@ public class MapBuilder {
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,torreon,442));
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,monclova,506));
 
+        ciudadjuarez.addEdge(new Edge(ciudadjuarez,hermosillo,481));
+
         ciudadjaloa.addEdge(new Edge(ciudadjaloa,sanvicente	,416));
 
         ciudadlerdo.addEdge(new Edge(ciudadlerdo,torreon,199));
@@ -99,6 +101,7 @@ public class MapBuilder {
         hermosillo.addEdge(new Edge(hermosillo,obregon,358));
         hermosillo.addEdge(new Edge(hermosillo,	ciudadjuarez	,481));
         hermosillo.addEdge(new Edge(hermosillo,ciudaddelicias,470));
+        hermosillo.addEdge(new Edge(hermosillo,mexicali,585));
 
         lapaz.addEdge(new Edge(lapaz,lareto,270));
         lapaz.addEdge(new Edge(lapaz,tecate,1120));
@@ -121,16 +124,18 @@ public class MapBuilder {
 
         monterrey.addEdge(new Edge(monterrey,zaragoza,71));
 
-        nogales.addEdge(new Edge(nogales,mochis,644));
-        nogales.addEdge(new Edge(nogales,parral,551));
-        nogales.addEdge(new Edge(nogales,ciudaddelicias,546));
+        navojoa.addEdge(new Edge(navojoa,mochis,644));
+        navojoa.addEdge(new Edge(navojoa,parral,551));
+        navojoa.addEdge(new Edge(navojoa,ciudaddelicias,546));
+        navojoa.addEdge(new Edge(navojoa,obregon,188));
 
         nuevolaredo.addEdge(new Edge(nuevolaredo,tampico,605));
 
         nuevoleon.addEdge(new Edge(nuevoleon,monterrey,15));
         nuevoleon.addEdge(new Edge(nuevoleon,nuevolaredo	,214));
 
-        obregon.addEdge(new Edge(obregon,nogales,188));
+        obregon.addEdge(new Edge(obregon,navojoa,188));
+        obregon.addEdge(new Edge(obregon,hermosillo,358));
 
         parral.addEdge(new Edge(parral,ciudadlerdo,533));
 
@@ -199,7 +204,7 @@ public class MapBuilder {
         instance.addNode(mochis);
         instance.addNode(monclova);
         instance.addNode(monterrey);
-        instance.addNode(nogales);
+        instance.addNode(navojoa);
         instance.addNode(nuevolaredo);
         instance.addNode(nuevoleon);
         instance.addNode(obregon);
