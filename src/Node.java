@@ -28,11 +28,19 @@ public class Node {
         return "Node [city=" + city + ", adjacents=" + adjacents + "]";
     }
 
-    public void ordenarMayor(){
+    public void ordenarMayorMayor(){
         Collections.sort(adjacents, (o1, o2) -> {
             String st1 = String.valueOf(o1.getDistance());
             String st2 = String.valueOf(o2.getDistance());
             return st1.compareTo(st2);
+        });
+    }
+
+    public void ordenarMenorMayor(){
+        Collections.sort(adjacents, (o1, o2) -> {
+            String st1 = String.valueOf(o1.getDistance());
+            String st2 = String.valueOf(o2.getDistance());
+            return st2.compareTo(st1);
         });
     }
 

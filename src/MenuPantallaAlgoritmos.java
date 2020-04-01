@@ -144,6 +144,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 for(String impresion : lista){
                     Texto += impresion + "\n";
                 }
+                System.out.println(llego);
                 consola.setText(Texto);
                 muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
             }
@@ -160,6 +161,24 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 for(String impresion : lista){
                     Texto += impresion + "\n";
                 }
+                System.out.println(llego);
+                consola.setText(Texto);
+                muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
+            }
+            else if(opcionComparar == 5){
+                System.out.print(MapBuilder.distancia);
+                Boolean llego = MapBuilder.hasPathBfsMejorado(origen,destino);
+                List<String> lista = new ArrayList<>();
+                String Texto = "";
+                lista.add("Total de Ciudades Visitadas: " + (MapBuilder.ciudadesRecorridas.size()-1));
+                for(String recorrido : MapBuilder.ciudadesRecorridas){
+                    lista.add(recorrido);
+                }
+                lista.add("Total de KM recorridos: " + MapBuilder.distancia);
+                for(String impresion : lista){
+                    Texto += impresion + "\n";
+                }
+                System.out.println(llego);
                 consola.setText(Texto);
                 muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
             }

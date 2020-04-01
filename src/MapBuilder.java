@@ -8,7 +8,9 @@ import java.util.List;
  *
  */
 public class MapBuilder {
-    private static final Graph instance = new Graph();
+    private static  Graph instance = new Graph();
+
+    public static Graph aux = new Graph();
 
     public static double distancia = 0 ;
     public static List<String> ciudadesRecorridas = new ArrayList<>();
@@ -79,24 +81,37 @@ public class MapBuilder {
 
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,torreon,442));
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,monclova,506));
+        ciudaddelicias.addEdge(new Edge(ciudaddelicias,hermosillo,470));
+        ciudaddelicias.addEdge(new Edge(ciudaddelicias,navojoa,546));
 
         ciudadjuarez.addEdge(new Edge(ciudadjuarez,hermosillo,481));
 
         ciudadjaloa.addEdge(new Edge(ciudadjaloa,sanvicente	,416));
+        ciudadjaloa.addEdge(new Edge(ciudadjaloa,torreon	,328));
 
         ciudadlerdo.addEdge(new Edge(ciudadlerdo,torreon,199));
+        ciudadlerdo.addEdge(new Edge(ciudadlerdo,parral,551));
 
         ciudadojocaliente.addEdge(new Edge(	ciudadojocaliente,sanluispotosi	,270));
+        ciudadojocaliente.addEdge(new Edge(	ciudadojocaliente,sanvicente	,426));
+        ciudadojocaliente.addEdge(new Edge(	ciudadojocaliente,fresnillo	,52));
+        ciudadojocaliente.addEdge(new Edge(	ciudadojocaliente,santamariaoro	,262));
 
         ciudadvalles.addEdge(new Edge(ciudadvalles,sanluispotosi,419));
+        ciudadvalles.addEdge(new Edge(ciudadvalles,ciudadvictoria,134));
 
         ciudadvictoria.addEdge(new Edge(ciudadvictoria,ciudadvalles,134));
 
         culiacan.addEdge(new Edge(culiacan,mazatlan,204));
+        culiacan.addEdge(new Edge(culiacan,mochis,194));
 
         fresnillo.addEdge(new Edge(fresnillo,ciudadojocaliente,52));
+        fresnillo.addEdge(new Edge(fresnillo,victoriadurango,206));
+        fresnillo.addEdge(new Edge(fresnillo,gomezpalacio,205));
 
         gomezpalacio.addEdge(new Edge(gomezpalacio,fresnillo,205));
+        gomezpalacio.addEdge(new Edge(gomezpalacio,torreon,213));
+
 
         hermosillo.addEdge(new Edge(hermosillo,obregon,358));
         hermosillo.addEdge(new Edge(hermosillo,	ciudadjuarez	,481));
@@ -111,6 +126,7 @@ public class MapBuilder {
         lareto.addEdge(new Edge(lareto,lapaz,270));
 
         mazatlan.addEdge(new Edge(mazatlan,victoriadurango,200));
+        mazatlan.addEdge(new Edge(mazatlan,culiacan,204));
 
         mexicali.addEdge(new Edge(mexicali,hermosillo,585));
         mexicali.addEdge(new Edge(mexicali,tecate,108));
@@ -118,11 +134,16 @@ public class MapBuilder {
 
 
         mochis.addEdge(new Edge(mochis,culiacan,194));
+        mochis.addEdge(new Edge(mochis,navojoa,644));
 
         monclova.addEdge(new Edge(monclova,nuevoleon,187));
         monclova.addEdge(new Edge(monclova,saltillo,169));
+        monclova.addEdge(new Edge(monclova,torreon,253));
+        monclova.addEdge(new Edge(monclova,ciudaddelicias,506));
 
         monterrey.addEdge(new Edge(monterrey,zaragoza,71));
+        monterrey.addEdge(new Edge(monterrey,saltillo,74));
+        monterrey.addEdge(new Edge(monterrey,nuevoleon,15));
 
         navojoa.addEdge(new Edge(navojoa,mochis,644));
         navojoa.addEdge(new Edge(navojoa,parral,551));
@@ -130,6 +151,7 @@ public class MapBuilder {
         navojoa.addEdge(new Edge(navojoa,obregon,188));
 
         nuevolaredo.addEdge(new Edge(nuevolaredo,tampico,605));
+        nuevolaredo.addEdge(new Edge(nuevolaredo,nuevoleon,214));
 
         nuevoleon.addEdge(new Edge(nuevoleon,monterrey,15));
         nuevoleon.addEdge(new Edge(nuevoleon,nuevolaredo	,214));
@@ -138,22 +160,29 @@ public class MapBuilder {
         obregon.addEdge(new Edge(obregon,hermosillo,358));
 
         parral.addEdge(new Edge(parral,ciudadlerdo,533));
+        parral.addEdge(new Edge(parral,navojoa,551));
 
         saltillo.addEdge(new Edge(saltillo,monterrey,74));
+        saltillo.addEdge(new Edge(saltillo,monclova,169));
 
         sanblas.addEdge(new Edge(sanblas,santamariaoro,75));
+        sanblas.addEdge(new Edge(sanblas,tepic,40));
 
         santamariaoro.addEdge(new Edge(santamariaoro,ciudadojocaliente,262));
+        santamariaoro.addEdge(new Edge(santamariaoro,sanblas,75));
 
         sanvicente.addEdge(new Edge(sanvicente,ciudadojocaliente,426));
         sanvicente.addEdge(new Edge(sanvicente,zaragoza,406));
+        sanvicente.addEdge(new Edge(sanvicente,ciudadjaloa,416));
 
         tampico.addEdge(new Edge(tampico,ciudadvictoria,3));
+        tampico.addEdge(new Edge(tampico,nuevolaredo,605));
 
         tecate.addEdge(new Edge(tecate,mexicali,108));
         tecate.addEdge(new Edge(tecate,tijuana,39));
 
         tepic.addEdge(new Edge(tepic,sanblas,40));
+        tepic.addEdge(new Edge(tepic,victoriadurango,280));
 
         tijuana.addEdge(new Edge(tijuana,cabos,1279));
         tijuana.addEdge(new Edge(tijuana,tecate,39));
@@ -161,11 +190,19 @@ public class MapBuilder {
         torreon.addEdge(new Edge(torreon,monclova,253));
         torreon.addEdge(new Edge(torreon,gomezpalacio,213));
         torreon.addEdge(new Edge(torreon,ciudadjaloa,328));
+        torreon.addEdge(new Edge(torreon,ciudaddelicias,442));
+        torreon.addEdge(new Edge(torreon,ciudadlerdo,199));
 
         victoriadurango.addEdge(new Edge(victoriadurango,fresnillo,206));
         victoriadurango.addEdge(new Edge(victoriadurango,tepic,280));
+        victoriadurango.addEdge(new Edge(victoriadurango,mazatlan,200));
+
+        sanluispotosi.addEdge(new Edge(sanluispotosi,ciudadojocaliente	,270));
+        sanluispotosi.addEdge(new Edge(sanluispotosi,ciudadvalles,419));
 
         zaragoza.addEdge(new Edge(zaragoza,ciudadvictoria,386));
+        zaragoza.addEdge(new Edge(zaragoza,sanvicente,426));
+        zaragoza.addEdge(new Edge(zaragoza,monterrey,71));
 
         //-------------------------------
 
@@ -272,6 +309,20 @@ public class MapBuilder {
             }
         }
         return false;
+    }
+
+    public static boolean hasPathBfsMejorado(String source, String destination){
+        ciudadesRecorridas.clear();
+        aux = instance;
+        instance.ordenarRutas();
+        Node start = getNode(source);
+        Node end = getNode(destination);
+        boolean band = false ;
+        if (start != null && end!= null) {
+            band = hasPathBfs(start, end);
+        }
+        instance = aux ;
+        return band ;
     }
 
     public static boolean hasPathBfs(String source, String destination) {
