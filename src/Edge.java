@@ -1,12 +1,13 @@
-public class Edge {
+public class Edge implements Comparable<Edge> {
     private Node origin;
     private Node destination;
-    private double distance;
-
+    private Double distance;
+    private Integer distancia ;
     public Edge(Node origin, Node destination, double distance) {
         this.origin = origin;
         this.destination = destination;
         this.distance = distance;
+        distancia = (int) distance ;
     }
 
     public Node getOrigin() {
@@ -41,5 +42,10 @@ public class Edge {
 
     public String obtenerDistancias(){
         return "Destino " + destination.getCity() + " Distancia " + distance;
+    }
+
+    @Override
+    public int compareTo(Edge edge) {
+       return Integer.compare(distancia, edge.distancia);
     }
 }

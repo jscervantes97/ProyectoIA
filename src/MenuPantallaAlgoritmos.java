@@ -131,6 +131,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             String destino=(String)comboBoxDestino.getSelectedItem();
             String comparar=(String)comboBoxComparacion.getSelectedItem();
             MapBuilder.distancia = 0;
+            long tiempoInicio=System.currentTimeMillis();
             if(opcionComparar == 1){
                 System.out.print(MapBuilder.distancia);
                 Boolean llego = MapBuilder.hasPathBfs(origen,destino);
@@ -166,7 +167,9 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
             }
             else if(opcionComparar == 5){
-                System.out.print(MapBuilder.distancia);
+                //System.out.print(MapBuilder.distancia);
+                MapBuilder.aux = MapBuilder.instance;
+                MapBuilder.instance.ordenarRutas();
                 Boolean llego = MapBuilder.hasPathBfsMejorado(origen,destino);
                 List<String> lista = new ArrayList<>();
                 String Texto = "";
@@ -174,6 +177,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 for(String recorrido : MapBuilder.ciudadesRecorridas){
                     lista.add(recorrido);
                 }
+                MapBuilder.instance = MapBuilder.getGraph();
                 lista.add("Total de KM recorridos: " + MapBuilder.distancia);
                 for(String impresion : lista){
                     Texto += impresion + "\n";
@@ -187,6 +191,8 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 //JOptionPane.showMessageDialog(null,"Selecciona un algoritmo","A caso usted mastica awa?",JOptionPane.WARNING_MESSAGE);
                 JOptionPane.showMessageDialog(null,"Selecciona un algoritmo","A caso usted mastica awa?",JOptionPane.WARNING_MESSAGE);
             }
+            long tiempoTermino=System.currentTimeMillis();
+            consola.setText(consola.getText() + "\n Duracion de la ejecucion: " + (tiempoTermino - tiempoInicio) + "milidegundos");
         }
     }
 

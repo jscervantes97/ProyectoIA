@@ -8,7 +8,7 @@ import java.util.List;
  *
  */
 public class MapBuilder {
-    private static  Graph instance = new Graph();
+    public static  Graph instance = new Graph();
 
     public static Graph aux = new Graph();
 
@@ -76,8 +76,9 @@ public class MapBuilder {
 
         //-------------------------------
 
-        cabos.addEdge(new Edge(cabos,lapaz,146));
+
         cabos.addEdge(new Edge(cabos,tijuana,1279));
+        cabos.addEdge(new Edge(cabos,lapaz,146));
 
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,torreon,442));
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,monclova,506));
@@ -314,7 +315,8 @@ public class MapBuilder {
     public static boolean hasPathBfsMejorado(String source, String destination){
         ciudadesRecorridas.clear();
         aux = instance;
-        instance.ordenarRutas();
+        //instance.ordenarRutas();
+
         Node start = getNode(source);
         Node end = getNode(destination);
         boolean band = false ;

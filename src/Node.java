@@ -6,6 +6,11 @@ import java.util.List;
 public class Node {
     private String city;
     private List<Edge> adjacents = new ArrayList();
+    public double g_scores;
+    public double h_scores;  //es la distancia que hay de una ciudad a otra
+    public double f_scores = 0;
+
+
 
     public Node(String city) {
         this.city = city;
@@ -28,20 +33,24 @@ public class Node {
         return "Node [city=" + city + ", adjacents=" + adjacents + "]";
     }
 
-    public void ordenarMayorMayor(){
-        Collections.sort(adjacents, (o1, o2) -> {
-            String st1 = String.valueOf(o1.getDistance());
-            String st2 = String.valueOf(o2.getDistance());
-            return st1.compareTo(st2);
-        });
-    }
+
 
     public void ordenarMenorMayor(){
+        /*
         Collections.sort(adjacents, (o1, o2) -> {
             String st1 = String.valueOf(o1.getDistance());
             String st2 = String.valueOf(o2.getDistance());
             return st2.compareTo(st1);
-        });
+        });*/
+        Collections.sort(adjacents);
+    }
+
+    public void setH(){
+        double sum = 0 ;
+        for(Edge vertice : adjacents){
+            sum += vertice.getDistance();
+        }
+        h_scores = sum/adjacents.size() ;
     }
 
 }

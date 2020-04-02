@@ -29,9 +29,13 @@ public class Graph {
     }
 
     public void ordenarRutas(){
+
         for(Node nodo : nodes){
+            //nodo.ordenarMenorMayor();
             nodo.ordenarMenorMayor();
+            //nodo = null ;
         }
+
     }
 
     public List<Edge> getEdges(String ciudad){

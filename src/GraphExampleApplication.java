@@ -6,7 +6,8 @@ public class GraphExampleApplication {
     public double distancia = 0 ;
     public GraphExampleApplication() {
         graph = MapBuilder.getGraph();
-        //graph.ordenarRutas();
+        graph.ordenarRutas();
+        graph.addNode(new Node("Navolato"));
     }
 
     private Node getNode(String city) {
@@ -90,7 +91,15 @@ public class GraphExampleApplication {
     public static void main(String[] args) {
         int opcion = 0 ;
         GraphExampleApplication grafo = new GraphExampleApplication();
-
+        grafo.graph.ordenarRutas();
+        //grafo.graph.ordenarRutas();
+        /*Graph frago = MapBuilder.getGraph();
+        frago.ordenarRutas();
+        for(int i = 0 ; i < frago.getNodes().size() ; i++){
+            Node nodo = frago.getNodes().get(i);
+            nodo.ordenarMayorMayor();
+        }
+        */
         Scanner Lee = new Scanner(System.in);
         System.out.println("********************");
 
@@ -127,5 +136,32 @@ public class GraphExampleApplication {
         System.out.println(String.format("From culiacan to mochis %s", grafo.hasPathDfs("culiacan", "mochis")));
         System.out.println("Distancia Recorrida " + grafo.distancia);
         grafo.distancia = 0 ;
+
+        Node df = new Node("DF");
+        Node toluca = new Node("Toluca");
+        Node cuernavaca = new Node("Cuernavaca");
+        Node puebla = new Node("Puebla");
+        Node tlaxcala = new Node("Tlaxcala");
+        Node cancun = new Node("Cancún");
+
+
+        df.addEdge(new Edge(df, cancun, 150));
+        df.addEdge(new Edge(df, toluca, 100));
+        df.addEdge(new Edge(df, cuernavaca, 90));
+        df.ordenarMenorMayor();
+        df.setH();
+        System.out.println(df.h_scores);
+        toluca.addEdge(new Edge(toluca, cuernavaca, 150));
+        toluca.addEdge(new Edge(toluca, df, 100));
+        toluca.addEdge(new Edge(toluca, puebla, 350));
+        toluca.addEdge(new Edge(toluca, tlaxcala, 340));
+        toluca.ordenarMenorMayor();
+
+        cuernavaca.addEdge(new Edge(cuernavaca, puebla, 100));
+        cuernavaca.addEdge(new Edge(cuernavaca, df, 90));
+
+
+        puebla.addEdge(new Edge(puebla, tlaxcala, 20));
+        puebla.addEdge(new Edge(puebla, toluca, 350));
     }
 }
