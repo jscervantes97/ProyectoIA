@@ -8,17 +8,21 @@ import java.util.List;
  *
  */
 public class MapBuilder {
-    public static  Graph instance = new Graph();
+    public static  Graph instance = getGraph();
 
-    public static Graph aux = new Graph();
+    public static Graph aux = getGraph();
 
     public static double distancia = 0 ;
     public static List<String> ciudadesRecorridas = new ArrayList<>();
 
     private MapBuilder() {
+        instance = getGraph();
+        aux = getGraph();
+        System.out.println(instance);
     }
 
     public static Graph getGraph() {
+        Graph instance = new Graph();
          Node df = new Node("DF");
          Node toluca = new Node("Toluca");
          Node cuernavaca = new Node("Cuernavaca");

@@ -168,7 +168,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             }
             else if(opcionComparar == 5){
                 //System.out.print(MapBuilder.distancia);
-                MapBuilder.aux = MapBuilder.instance;
+                //MapBuilder.aux = MapBuilder.instance;
                 MapBuilder.instance.ordenarRutas();
                 Boolean llego = MapBuilder.hasPathBfsMejorado(origen,destino);
                 List<String> lista = new ArrayList<>();
@@ -200,7 +200,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
         String resultados = "";
         switch (nombreAlgoritmoComparar){
             case "NINGUNO":
-                resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + MapBuilder.distancia + "Km";
+                resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + MapBuilder.distancia + " Km";
             break;
             case "BFS":
                 MapBuilder.distancia = 0 ;
@@ -212,6 +212,13 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 MapBuilder.hasPathDfs(origen,destino);
                 resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + distanciaOriginal + "Km Distancia Recorrida por: " + nombreAlgoritmoComparar + " " + MapBuilder.distancia + " Km";
             break;
+            case "BFS MEJORADO":
+                MapBuilder.distancia = 0 ;
+                MapBuilder.instance.ordenarRutas();
+                MapBuilder.hasPathBfsMejorado(origen,destino);
+                resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + distanciaOriginal + "Km Distancia Recorrida por: " + nombreAlgoritmoComparar + " " + MapBuilder.distancia + " Km";
+                MapBuilder.instance = MapBuilder.getGraph();
+                break;
         }
         return resultados ;
     }
