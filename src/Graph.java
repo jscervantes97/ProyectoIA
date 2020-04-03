@@ -29,8 +29,30 @@ public class Graph {
     }
 
     public void ordenarRutas(){
+
         for(Node nodo : nodes){
-            nodo.ordenarMayor();
+            //nodo.ordenarMenorMayor();
+            nodo.ordenarMenorMayor();
+            //nodo = null ;
         }
+    }
+
+    public void setearH(){
+        for(Node nodo : nodes){
+            //nodo.ordenarMenorMayor();
+            nodo.setH();
+            //nodo = null ;
+        }
+    }
+
+    public List<Edge> getEdges(String ciudad){
+        List<Edge> lista = new ArrayList<>();
+        nodes.forEach(i ->{
+            if(i.getCity().equals(ciudad)){
+               // lista.add(i.getAdjacents());
+               // lista.add(i.getAdjacents());
+            }
+        });
+        return lista;
     }
 }

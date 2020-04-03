@@ -1,15 +1,29 @@
 
+
+
+
+import java.util.*;
+
 /**
  * @author raidentrance
  *
  */
 public class MapBuilder {
-    private static final Graph instance = new Graph();
+    public static  Graph instance = getGraph();
+
+    public static Graph aux = getGraph();
+
+    public static double distancia = 0 ;
+    public static List<String> ciudadesRecorridas = new ArrayList<>();
 
     private MapBuilder() {
+        instance = getGraph();
+        aux = getGraph();
+        System.out.println(instance);
     }
 
     public static Graph getGraph() {
+        Graph instance = new Graph();
          Node df = new Node("DF");
          Node toluca = new Node("Toluca");
          Node cuernavaca = new Node("Cuernavaca");
@@ -26,128 +40,175 @@ public class MapBuilder {
         // Node cancun = new Node("Cancún");
 
         //-------------------------------
-        Node	cabos	= new Node("cabos");
-        Node	ciudaddelicias	= new Node("ciudaddelicias");
-        Node	ciudadjaloa	= new Node("ciudadjaloa");
-        Node	ciudadlerdo	= new Node("ciudadlerdo");
-        Node	ciudadojocaliente	= new Node("ciudadojocaliente");
-        Node	ciudadjuarez	= new Node("ciudadjuarez");
-        Node	ciudadvalles	= new Node("ciudadvalles");
-        Node	ciudadvictoria	= new Node("ciudadvictoria");
-        Node	culiacan	= new Node("culiacan");
-        Node	fresnillo	= new Node("fresnillo");
-        Node	gomezpalacio	= new Node("gomezpalacio");
-        Node	hermosillo	= new Node("hermosillo");
-        Node	lapaz	= new Node("lapaz");
-        Node	lareto 	= new Node("lareto");
-        Node	loreto 	= new Node("loreto");
-        Node	mazatlan	= new Node("mazatlan");
-        Node	mexicali	= new Node("mexicali");
-        Node	mochis	= new Node("mochis");
-        Node	monclova	= new Node("monclova");
-        Node	monterrey	= new Node("monterrey");
-        Node	nogales	= new Node("nogales");
-        Node	nuevolaredo	= new Node("nuevolaredo");
-        Node	nuevoleon	= new Node("nuevoleon");
-        Node	obregon	= new Node("obregon");
-        Node	parral	= new Node("parral");
-        Node	saltillo	= new Node("saltillo");
-        Node	sanblas	= new Node("sanblas");
-        Node	sanluispotosi	= new Node("sanluispotosi");
-        Node	santamariaoro	= new Node("santamariaoro");
-        Node	sanvicente	= new Node("sanvicente");
-        Node	tampico	= new Node("tampico");
-        Node	tecate	= new Node("tecate");
-        Node	tepic	= new Node("tepic");
-        Node	tijuana	= new Node("tijuana");
-        Node	torreon	= new Node("torreon");
-        Node	victoriadurango	= new Node("	victoriadurango	");
-        Node	zaragoza 	= new Node("	zaragoza 	");
+        Node	cabos	= new Node("Los Cabos");
+        Node	ciudaddelicias	= new Node("Ciudad Delicias");
+        Node	ciudadjaloa	= new Node("Ciudad Jaloa");
+        Node	ciudadlerdo	= new Node("Ciudad Lerdo");
+        Node	ciudadojocaliente	= new Node("Ciudado Jocaliente");
+        Node	ciudadjuarez	= new Node("Ciudad Juarez");
+        Node	ciudadvalles	= new Node("Ciudad Valles");
+        Node	ciudadvictoria	= new Node("Ciudad Victoria");
+        Node	culiacan	= new Node("Culiacan");
+        Node	fresnillo	= new Node("Fresnillo");
+        Node	gomezpalacio	= new Node("Gomez Palacio");
+        Node	hermosillo	= new Node("Hermosillo");
+        Node	lapaz	= new Node("La paz"); //nunca fue una opcion ??
+        Node	lareto 	= new Node("Lareto");
+        Node	mazatlan	= new Node("Mazatlan");
+        Node	mexicali	= new Node("Mexicali");
+        Node	mochis	= new Node("Los Mochis");
+        Node	monclova	= new Node("Monclova");
+        Node	monterrey	= new Node("Monterrey");
+        Node	navojoa	= new Node("Navojoa");
+        Node	nuevolaredo	= new Node("Nuevo Laredo");
+        Node	nuevoleon	= new Node("Nuevo Leon");
+        Node	obregon	= new Node("Ciudad Obregon");
+        Node	parral	= new Node("Parral");
+        Node	saltillo	= new Node("Saltillo");
+        Node	sanblas	= new Node("San blas");
+        Node	sanluispotosi	= new Node("San Luis Potosi");
+        Node	santamariaoro	= new Node("Santa Mariaoro");
+        Node	sanvicente	= new Node("San Vicente");
+        Node	tampico	= new Node("Tampico");
+        Node	tecate	= new Node("Tecate");
+        Node	tepic	= new Node("Tepic");
+        Node	tijuana	= new Node("Tijuana");
+        Node	torreon	= new Node("Torreon");
+        Node	victoriadurango	= new Node("Victoria Durango");
+        Node	zaragoza 	= new Node("Zaragoza");
 
 
 
         //-------------------------------
 
+
+        cabos.addEdge(new Edge(cabos,tijuana,1279));
         cabos.addEdge(new Edge(cabos,lapaz,146));
-        cabos.addEdge(new Edge(cabos,tijuana,279));
 
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,torreon,442));
         ciudaddelicias.addEdge(new Edge(ciudaddelicias,monclova,506));
+        ciudaddelicias.addEdge(new Edge(ciudaddelicias,hermosillo,470));
+        ciudaddelicias.addEdge(new Edge(ciudaddelicias,navojoa,546));
+
+        ciudadjuarez.addEdge(new Edge(ciudadjuarez,hermosillo,481));
 
         ciudadjaloa.addEdge(new Edge(ciudadjaloa,sanvicente	,416));
+        ciudadjaloa.addEdge(new Edge(ciudadjaloa,torreon	,328));
 
         ciudadlerdo.addEdge(new Edge(ciudadlerdo,torreon,199));
+        ciudadlerdo.addEdge(new Edge(ciudadlerdo,parral,551));
 
         ciudadojocaliente.addEdge(new Edge(	ciudadojocaliente,sanluispotosi	,270));
+        ciudadojocaliente.addEdge(new Edge(	ciudadojocaliente,sanvicente	,426));
+        ciudadojocaliente.addEdge(new Edge(	ciudadojocaliente,fresnillo	,52));
+        ciudadojocaliente.addEdge(new Edge(	ciudadojocaliente,santamariaoro	,262));
 
         ciudadvalles.addEdge(new Edge(ciudadvalles,sanluispotosi,419));
+        ciudadvalles.addEdge(new Edge(ciudadvalles,ciudadvictoria,134));
 
         ciudadvictoria.addEdge(new Edge(ciudadvictoria,ciudadvalles,134));
 
         culiacan.addEdge(new Edge(culiacan,mazatlan,204));
+        culiacan.addEdge(new Edge(culiacan,mochis,194));
 
         fresnillo.addEdge(new Edge(fresnillo,ciudadojocaliente,52));
+        fresnillo.addEdge(new Edge(fresnillo,victoriadurango,206));
+        fresnillo.addEdge(new Edge(fresnillo,gomezpalacio,205));
 
         gomezpalacio.addEdge(new Edge(gomezpalacio,fresnillo,205));
+        gomezpalacio.addEdge(new Edge(gomezpalacio,torreon,213));
+
 
         hermosillo.addEdge(new Edge(hermosillo,obregon,358));
         hermosillo.addEdge(new Edge(hermosillo,	ciudadjuarez	,481));
         hermosillo.addEdge(new Edge(hermosillo,ciudaddelicias,470));
+        hermosillo.addEdge(new Edge(hermosillo,mexicali,585));
 
         lapaz.addEdge(new Edge(lapaz,lareto,270));
         lapaz.addEdge(new Edge(lapaz,tecate,1120));
+        lapaz.addEdge(new Edge(lapaz,cabos,146));
 
-        lareto .addEdge(new Edge(lareto,mexicali,838));
+        lareto.addEdge(new Edge(lareto,mexicali,838));
+        lareto.addEdge(new Edge(lareto,lapaz,270));
 
         mazatlan.addEdge(new Edge(mazatlan,victoriadurango,200));
+        mazatlan.addEdge(new Edge(mazatlan,culiacan,204));
 
         mexicali.addEdge(new Edge(mexicali,hermosillo,585));
+        mexicali.addEdge(new Edge(mexicali,tecate,108));
+        mexicali.addEdge(new Edge(mexicali,lareto,838));
+
 
         mochis.addEdge(new Edge(mochis,culiacan,194));
+        mochis.addEdge(new Edge(mochis,navojoa,644));
 
         monclova.addEdge(new Edge(monclova,nuevoleon,187));
         monclova.addEdge(new Edge(monclova,saltillo,169));
+        monclova.addEdge(new Edge(monclova,torreon,253));
+        monclova.addEdge(new Edge(monclova,ciudaddelicias,506));
 
         monterrey.addEdge(new Edge(monterrey,zaragoza,71));
+        monterrey.addEdge(new Edge(monterrey,saltillo,74));
+        monterrey.addEdge(new Edge(monterrey,nuevoleon,15));
 
-        nogales.addEdge(new Edge(nogales,mochis,644));
-        nogales.addEdge(new Edge(nogales,parral,551));
-        nogales.addEdge(new Edge(nogales,ciudaddelicias,546));
+        navojoa.addEdge(new Edge(navojoa,mochis,644));
+        navojoa.addEdge(new Edge(navojoa,parral,551));
+        navojoa.addEdge(new Edge(navojoa,ciudaddelicias,546));
+        navojoa.addEdge(new Edge(navojoa,obregon,188));
 
         nuevolaredo.addEdge(new Edge(nuevolaredo,tampico,605));
+        nuevolaredo.addEdge(new Edge(nuevolaredo,nuevoleon,214));
 
         nuevoleon.addEdge(new Edge(nuevoleon,monterrey,15));
         nuevoleon.addEdge(new Edge(nuevoleon,nuevolaredo	,214));
 
-        obregon.addEdge(new Edge(obregon,nogales,188));
+        obregon.addEdge(new Edge(obregon,navojoa,188));
+        obregon.addEdge(new Edge(obregon,hermosillo,358));
 
         parral.addEdge(new Edge(parral,ciudadlerdo,533));
+        parral.addEdge(new Edge(parral,navojoa,551));
 
         saltillo.addEdge(new Edge(saltillo,monterrey,74));
+        saltillo.addEdge(new Edge(saltillo,monclova,169));
 
         sanblas.addEdge(new Edge(sanblas,santamariaoro,75));
+        sanblas.addEdge(new Edge(sanblas,tepic,40));
 
         santamariaoro.addEdge(new Edge(santamariaoro,ciudadojocaliente,262));
+        santamariaoro.addEdge(new Edge(santamariaoro,sanblas,75));
 
         sanvicente.addEdge(new Edge(sanvicente,ciudadojocaliente,426));
         sanvicente.addEdge(new Edge(sanvicente,zaragoza,406));
+        sanvicente.addEdge(new Edge(sanvicente,ciudadjaloa,416));
 
         tampico.addEdge(new Edge(tampico,ciudadvictoria,3));
+        tampico.addEdge(new Edge(tampico,nuevolaredo,605));
 
         tecate.addEdge(new Edge(tecate,mexicali,108));
+        tecate.addEdge(new Edge(tecate,tijuana,39));
 
         tepic.addEdge(new Edge(tepic,sanblas,40));
+        tepic.addEdge(new Edge(tepic,victoriadurango,280));
 
+        tijuana.addEdge(new Edge(tijuana,cabos,1279));
         tijuana.addEdge(new Edge(tijuana,tecate,39));
 
         torreon.addEdge(new Edge(torreon,monclova,253));
         torreon.addEdge(new Edge(torreon,gomezpalacio,213));
         torreon.addEdge(new Edge(torreon,ciudadjaloa,328));
+        torreon.addEdge(new Edge(torreon,ciudaddelicias,442));
+        torreon.addEdge(new Edge(torreon,ciudadlerdo,199));
 
         victoriadurango.addEdge(new Edge(victoriadurango,fresnillo,206));
         victoriadurango.addEdge(new Edge(victoriadurango,tepic,280));
+        victoriadurango.addEdge(new Edge(victoriadurango,mazatlan,200));
+
+        sanluispotosi.addEdge(new Edge(sanluispotosi,ciudadojocaliente	,270));
+        sanluispotosi.addEdge(new Edge(sanluispotosi,ciudadvalles,419));
 
         zaragoza.addEdge(new Edge(zaragoza,ciudadvictoria,386));
+        zaragoza.addEdge(new Edge(zaragoza,sanvicente,426));
+        zaragoza.addEdge(new Edge(zaragoza,monterrey,71));
 
         //-------------------------------
 
@@ -186,7 +247,7 @@ public class MapBuilder {
         instance.addNode(mochis);
         instance.addNode(monclova);
         instance.addNode(monterrey);
-        instance.addNode(nogales);
+        instance.addNode(navojoa);
         instance.addNode(nuevolaredo);
         instance.addNode(nuevoleon);
         instance.addNode(obregon);
@@ -210,6 +271,278 @@ public class MapBuilder {
          instance.addNode(puebla);
          instance.addNode(cancun);
          instance.addNode(tlaxcala);
+         instance.setearH();
         return instance;
+    }
+
+    public static Node getNode(String city) {
+        List<Node> nodes = instance.getNodes();
+        for (Node node : nodes) {
+            if (node.getCity().equals(city)) {
+                return node;
+            }
+        }
+        return null;
+    }
+
+    public static boolean hasPathDfs(String source, String destination) {
+        ciudadesRecorridas.clear();
+        Node start = getNode(source);
+        Node end = getNode(destination);
+        if (start != null && end != null) {
+            return hasPathDfs(start, end, new HashSet());
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean hasPathDfs(Node origen, Node destination, HashSet visited) {
+        if (visited.contains(origen.getCity())) {
+            return false;
+        }
+        //System.out.println(origen.getCity());
+        visited.add(origen.getCity());
+        ciudadesRecorridas.add(origen.getCity());
+        if (origen == destination) {
+            return true;
+        }
+        for (Edge edge : origen.getAdjacents()) {
+            distancia += edge.getDistance();
+            if(visited.contains(edge.getDestination())){
+                distancia -= edge.getDistance();
+            }
+            if (hasPathDfs(edge.getDestination(), destination, visited)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean hasPathBfsMejorado(String source, String destination){
+        ciudadesRecorridas.clear();
+        aux = instance;
+        //instance.ordenarRutas();
+
+        Node start = getNode(source);
+        Node end = getNode(destination);
+        boolean band = false ;
+        if (start != null && end!= null) {
+            band = hasPathBfs(start, end);
+        }
+        instance = aux ;
+        return band ;
+    }
+
+    public static boolean hasPathBfs(String source, String destination) {
+        ciudadesRecorridas.clear();
+        Node start = getNode(source);
+        Node end = getNode(destination);
+
+        if (start != null && end!= null) {
+            return hasPathBfs(start, end);
+        } else {
+            return false;
+        }
+    }
+
+    public static boolean hasPathBfs(Node source, Node destination) {
+
+        LinkedList<Node> nextToVisit = new LinkedList<>();
+
+        HashSet<String> visited = new HashSet<>();
+        nextToVisit.add(source);
+        //System.out.println(source.getCity());
+        while (!nextToVisit.isEmpty()) {
+            Node node = nextToVisit.remove();
+           //System.out.println(node.getCity());
+            if (node.getCity().equals(destination.getCity())) {
+                return true;
+            }
+            if (visited.contains(node.getCity())) {
+                continue;
+            }
+            visited.add(node.getCity());
+            ciudadesRecorridas.add(node.getCity());
+            for (Edge edge : node.getAdjacents()) {
+                distancia += edge.getDistance();
+                nextToVisit.add(edge.getDestination());
+            }
+        }
+        return false;
+    }
+
+    public static List<String> getCiudadesRecorridas(){
+        List<String> lista = new ArrayList<>();
+        lista.add("Total de Ciudades Visitadas" + (ciudadesRecorridas.size()-1));
+        for(String ciudad : ciudadesRecorridas){
+            lista.add(ciudad);
+        }
+        return lista ;
+    }
+
+    public static void AstarSearch(Node source, Node goal){
+
+        Set<Node> explored = new HashSet<Node>();
+
+        PriorityQueue<Node> queue = new PriorityQueue<Node>(20,
+                new Comparator<Node>(){
+                    //override compare method
+                    public int compare(Node i, Node j){
+                        if(i.f_scores > j.f_scores){
+                            return 1;
+                        }
+                        else if (i.f_scores < j.f_scores){
+                            return -1;
+                        }
+                        else{
+                            return 0;
+                        }
+                    }
+
+                }
+        );
+
+        //cost from start
+        source.g_scores = 0;
+
+        queue.add(source);
+
+        boolean found = false;
+
+        while((!queue.isEmpty())&&(!found)){
+
+            //the node in having the lowest f_score value
+            Node current = queue.poll();
+
+            explored.add(current);
+
+            //goal found
+            if(current.getCity().equals(goal.getCity())){
+                found = true;
+            }
+
+            //check every child of current node
+            for(Edge e : current.getAdjacents()){
+                Node child = e.getDestination();
+                double cost = e.getDistance();
+                double temp_g_scores = current.g_scores + cost;
+                double temp_f_scores = temp_g_scores + child.h_scores;
+
+
+                                /*if child node has been evaluated and
+                                the newer f_score is higher, skip*/
+
+                if((explored.contains(child)) &&
+                        (temp_f_scores >= child.f_scores)){
+                    continue;
+                }
+
+                                /*else if child node is not in queue or
+                                newer f_score is lower*/
+
+                else if((!queue.contains(child)) ||
+                        (temp_f_scores < child.f_scores)){
+
+                    child.parent = current;
+                    child.g_scores = temp_g_scores;
+                    child.f_scores = temp_f_scores;
+
+                    if(queue.contains(child)){
+                        queue.remove(child);
+                    }
+
+                    queue.add(child);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    public static List<Node> hasAstartPath(String source, String destination) {
+        Node start = getNode(source);
+        Node end = getNode(destination);
+        AstarSearch(start, end);
+        return printPath(end);
+    }
+
+    public static List<Node> printPath(Node target){
+        List<Node> path = new ArrayList<Node>();
+
+        for(Node node = target; node!=null; node = node.parent){
+            path.add(node);
+            ciudadesRecorridas.add(node.getCity());
+            distancia += node.f_scores;
+        }
+
+        Collections.reverse(path);
+        Collections.reverse(ciudadesRecorridas);
+        return path;
+    }
+
+    public static boolean hasBranchBoundPath(String source, String destination) {
+        ciudadesRecorridas.clear();
+        Node start = getNode(source);
+        Node end = getNode(destination);
+        hasBranchBoundPath(start,end);
+        return false ;
+    }
+
+    public static void hasBranchBoundPath(Node nodoInicio, Node NodoFinal) {
+        double tempathlength = 0;
+        Set<Node> explored = new HashSet<Node>();
+
+        PriorityQueue<Node> cola = new PriorityQueue<Node>(20,
+                new Comparator<Node>() {
+                    //override compare method
+                    public int compare(Node i, Node j) {
+                        if (i.pathLength > j.pathLength) {
+                            return 1;
+                        } else if (i.pathLength < j.pathLength) {
+                            return -1;
+                        } else {
+                            return 0;
+                        }
+                    }
+
+                }
+        );
+
+        cola.add(nodoInicio);
+
+        boolean encontro = false;
+
+        while ((!cola.isEmpty()) && (!encontro)) {
+            Node actual = cola.poll();
+
+            explored.add(actual);
+
+            //si se encuentra la meta
+            if (actual.getCity().equals(NodoFinal.getCity())) {
+                encontro = true;
+            }
+
+            //añadimos cada hijo del nodo actual
+            for (Edge adjacentes : actual.getAdjacents()) {
+                Node child = adjacentes.getDestination();
+                double cost = adjacentes.getDistance();
+                tempathlength = actual.pathLength + cost;
+                if ((explored.contains(child)) && (tempathlength >= child.pathLength)) {
+                    continue;
+                }
+                else if ((!cola.contains(child)) || (tempathlength < child.pathLength)) {
+                    child.parent = actual;
+                    child.pathLength = tempathlength;
+                    cola.add(child);
+                }
+
+            }
+            ArrayList<Node> close = (ArrayList<Node>) printPath(actual);
+            //System.out.println(close);
+            distancia = 0 ;
+            distancia = (int) actual.pathLength;
+        }
     }
 }
