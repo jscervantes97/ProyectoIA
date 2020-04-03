@@ -10,6 +10,7 @@ public class Node {
     public double g_scores;
     public double h_scores;  //es la distancia que hay de una ciudad a otra
     public double f_scores = 0;
+    public double pathLength;
 
 
 

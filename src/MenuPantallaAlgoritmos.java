@@ -166,6 +166,20 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 consola.setText(Texto);
                 muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
             }
+            else if(opcionComparar == 3){
+                System.out.print(MapBuilder.distancia);
+                MapBuilder.hasBranchBoundPath(origen,destino);
+                lista.add("Total de Ciudades Visitadas: " + (MapBuilder.ciudadesRecorridas.size()-1));
+                for(String recorrido : MapBuilder.ciudadesRecorridas){
+                    lista.add(recorrido);
+                }
+                lista.add("Total de KM recorridos: " + MapBuilder.distancia);
+                for(String impresion : lista){
+                    Texto += impresion + "\n";
+                }
+                consola.setText(Texto);
+                muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
+            }
             else if(opcionComparar == 4){
                 System.out.print(MapBuilder.distancia);
                 MapBuilder.hasAstartPath(origen,destino);
@@ -227,6 +241,11 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             case "A*":
                 MapBuilder.distancia = 0 ;
                 MapBuilder.hasAstartPath(origen,destino);
+                resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + distanciaOriginal + "Km Distancia Recorrida por: " + nombreAlgoritmoComparar + " " + MapBuilder.distancia + " Km";
+                break;
+            case "BRANCH AND BOUND":
+                MapBuilder.distancia = 0 ;
+                MapBuilder.hasBranchBoundPath(origen,destino);
                 resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + distanciaOriginal + "Km Distancia Recorrida por: " + nombreAlgoritmoComparar + " " + MapBuilder.distancia + " Km";
                 break;
             case "BFS MEJORADO":

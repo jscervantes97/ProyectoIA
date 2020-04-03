@@ -258,7 +258,8 @@ public class GraphExampleApplication {
         puebla.addEdge(new Edge(puebla, toluca, 350));
         */
 
-        MapBuilder.hasAstartPath("Los Cabos","Culiacan");
+        //MapBuilder.hasAstartPath("Los Cabos","Culiacan");
+        MapBuilder.hasBranchBoundPath("Los Cabos","Culiacan");
         System.out.println(MapBuilder.distancia);
         System.out.println(MapBuilder.ciudadesRecorridas);
     }

@@ -481,4 +481,68 @@ public class MapBuilder {
         Collections.reverse(ciudadesRecorridas);
         return path;
     }
+
+    public static boolean hasBranchBoundPath(String source, String destination) {
+        ciudadesRecorridas.clear();
+        Node start = getNode(source);
+        Node end = getNode(destination);
+        hasBranchBoundPath(start,end);
+        return false ;
+    }
+
+    public static void hasBranchBoundPath(Node nodoInicio, Node NodoFinal) {
+        double tempathlength = 0;
+        Set<Node> explored = new HashSet<Node>();
+
+        PriorityQueue<Node> cola = new PriorityQueue<Node>(20,
+                new Comparator<Node>() {
+                    //override compare method
+                    public int compare(Node i, Node j) {
+                        if (i.pathLength > j.pathLength) {
+                            return 1;
+                        } else if (i.pathLength < j.pathLength) {
+                            return -1;
+                        } else {
+                            return 0;
+                        }
+                    }
+
+                }
+        );
+
+        cola.add(nodoInicio);
+
+        boolean encontro = false;
+
+        while ((!cola.isEmpty()) && (!encontro)) {
+            Node actual = cola.poll();
+
+            explored.add(actual);
+
+            //si se encuentra la meta
+            if (actual.getCity().equals(NodoFinal.getCity())) {
+                encontro = true;
+            }
+
+            //añadimos cada hijo del nodo actual
+            for (Edge adjacentes : actual.getAdjacents()) {
+                Node child = adjacentes.getDestination();
+                double cost = adjacentes.getDistance();
+                tempathlength = actual.pathLength + cost;
+                if ((explored.contains(child)) && (tempathlength >= child.pathLength)) {
+                    continue;
+                }
+                else if ((!cola.contains(child)) || (tempathlength < child.pathLength)) {
+                    child.parent = actual;
+                    child.pathLength = tempathlength;
+                    cola.add(child);
+                }
+
+            }
+            ArrayList<Node> close = (ArrayList<Node>) printPath(actual);
+            //System.out.println(close);
+            distancia = 0 ;
+            distancia = (int) actual.pathLength;
+        }
+    }
 }
