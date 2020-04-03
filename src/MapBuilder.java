@@ -1,7 +1,8 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+
+
+
+
+import java.util.*;
 
 /**
  * @author raidentrance
@@ -270,6 +271,7 @@ public class MapBuilder {
          instance.addNode(puebla);
          instance.addNode(cancun);
          instance.addNode(tlaxcala);
+         instance.setearH();
         return instance;
     }
 
@@ -376,5 +378,107 @@ public class MapBuilder {
             lista.add(ciudad);
         }
         return lista ;
+    }
+
+    public static void AstarSearch(Node source, Node goal){
+
+        Set<Node> explored = new HashSet<Node>();
+
+        PriorityQueue<Node> queue = new PriorityQueue<Node>(20,
+                new Comparator<Node>(){
+                    //override compare method
+                    public int compare(Node i, Node j){
+                        if(i.f_scores > j.f_scores){
+                            return 1;
+                        }
+                        else if (i.f_scores < j.f_scores){
+                            return -1;
+                        }
+                        else{
+                            return 0;
+                        }
+                    }
+
+                }
+        );
+
+        //cost from start
+        source.g_scores = 0;
+
+        queue.add(source);
+
+        boolean found = false;
+
+        while((!queue.isEmpty())&&(!found)){
+
+            //the node in having the lowest f_score value
+            Node current = queue.poll();
+
+            explored.add(current);
+
+            //goal found
+            if(current.getCity().equals(goal.getCity())){
+                found = true;
+            }
+
+            //check every child of current node
+            for(Edge e : current.getAdjacents()){
+                Node child = e.getDestination();
+                double cost = e.getDistance();
+                double temp_g_scores = current.g_scores + cost;
+                double temp_f_scores = temp_g_scores + child.h_scores;
+
+
+                                /*if child node has been evaluated and
+                                the newer f_score is higher, skip*/
+
+                if((explored.contains(child)) &&
+                        (temp_f_scores >= child.f_scores)){
+                    continue;
+                }
+
+                                /*else if child node is not in queue or
+                                newer f_score is lower*/
+
+                else if((!queue.contains(child)) ||
+                        (temp_f_scores < child.f_scores)){
+
+                    child.parent = current;
+                    child.g_scores = temp_g_scores;
+                    child.f_scores = temp_f_scores;
+
+                    if(queue.contains(child)){
+                        queue.remove(child);
+                    }
+
+                    queue.add(child);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    public static List<Node> hasAstartPath(String source, String destination) {
+        Node start = getNode(source);
+        Node end = getNode(destination);
+        AstarSearch(start, end);
+        return printPath(end);
+    }
+
+    public static List<Node> printPath(Node target){
+        List<Node> path = new ArrayList<Node>();
+
+        for(Node node = target; node!=null; node = node.parent){
+            path.add(node);
+            ciudadesRecorridas.add(node.getCity());
+            distancia += node.f_scores;
+        }
+
+        Collections.reverse(path);
+        Collections.reverse(ciudadesRecorridas);
+        return path;
     }
 }

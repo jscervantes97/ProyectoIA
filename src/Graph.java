@@ -35,7 +35,14 @@ public class Graph {
             nodo.ordenarMenorMayor();
             //nodo = null ;
         }
+    }
 
+    public void setearH(){
+        for(Node nodo : nodes){
+            //nodo.ordenarMenorMayor();
+            nodo.setH();
+            //nodo = null ;
+        }
     }
 
     public List<Edge> getEdges(String ciudad){

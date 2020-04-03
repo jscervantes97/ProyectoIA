@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Node {
     private String city;
+    public Node parent;
     private List<Edge> adjacents = new ArrayList();
     public double g_scores;
     public double h_scores;  //es la distancia que hay de una ciudad a otra
@@ -30,7 +31,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return "Node [city=" + city + ", adjacents=" + adjacents + "]";
+        return "Node [city=" + city + ", h = "+ h_scores +" , adjacents=" + adjacents + "]";
     }
 
 

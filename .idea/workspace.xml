@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d383ce45-6b74-4bce-bfd5-0737fb134ffc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GraphExampleApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphExampleApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MapBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MapBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/start/AstarSearchAlgo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/start/AstarSearchAlgo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,38 +131,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585550058008" />
-    <state width="1237" height="181" key="GridCell.Tab.0.bottom" timestamp="1585888813246">
+    <state width="1237" height="99" key="GridCell.Tab.0.bottom" timestamp="1585901921715">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="181" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585888813246" />
-    <state width="1237" height="181" key="GridCell.Tab.0.center" timestamp="1585888813245">
+    <state width="1237" height="99" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585901921715" />
+    <state width="1237" height="99" key="GridCell.Tab.0.center" timestamp="1585901921715">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="181" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585888813245" />
-    <state width="1237" height="181" key="GridCell.Tab.0.left" timestamp="1585888813245">
+    <state width="1237" height="99" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1585901921715" />
+    <state width="1237" height="99" key="GridCell.Tab.0.left" timestamp="1585901921715">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="181" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585888813245" />
-    <state width="1237" height="181" key="GridCell.Tab.0.right" timestamp="1585888813245">
+    <state width="1237" height="99" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1585901921715" />
+    <state width="1237" height="99" key="GridCell.Tab.0.right" timestamp="1585901921715">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="181" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585888813245" />
-    <state width="1237" height="344" key="GridCell.Tab.1.bottom" timestamp="1585888419386">
+    <state width="1237" height="99" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1585901921715" />
+    <state width="1237" height="169" key="GridCell.Tab.1.bottom" timestamp="1585899849932">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="344" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585888419386" />
-    <state width="1237" height="344" key="GridCell.Tab.1.center" timestamp="1585888419385">
+    <state width="1237" height="169" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585899849932" />
+    <state width="1237" height="169" key="GridCell.Tab.1.center" timestamp="1585899849932">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="344" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585888419385" />
-    <state width="1237" height="344" key="GridCell.Tab.1.left" timestamp="1585888419385">
+    <state width="1237" height="169" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585899849932" />
+    <state width="1237" height="169" key="GridCell.Tab.1.left" timestamp="1585899849932">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="344" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585888419385" />
-    <state width="1237" height="344" key="GridCell.Tab.1.right" timestamp="1585888419385">
+    <state width="1237" height="169" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585899849932" />
+    <state width="1237" height="169" key="GridCell.Tab.1.right" timestamp="1585899849932">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="344" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585888419385" />
+    <state width="1237" height="169" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585899849932" />
     <state width="647" height="347" key="XDebugger.FullValuePopup" timestamp="1585726725298">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -182,11 +186,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GraphExampleApplication.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GraphExampleApplication.java</url>
           <line>42</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
@@ -207,7 +206,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java</url>
-          <line>139</line>
+          <line>140</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -217,57 +216,67 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java</url>
-          <line>151</line>
+          <line>152</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java</url>
-          <line>184</line>
+          <line>201</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
-          <line>323</line>
+          <line>325</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GraphExampleApplication.java</url>
-          <line>99</line>
+          <line>192</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GraphExampleApplication.java</url>
-          <line>98</line>
+          <line>191</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Node.java</url>
-          <line>50</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Node.java</url>
-          <line>52</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java</url>
-          <line>170</line>
+          <line>187</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java</url>
-          <line>171</line>
+          <line>188</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/MenuPantallaAlgoritmos.java</url>
-          <line>179</line>
+          <line>196</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
+          <line>414</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
+          <line>419</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
+          <line>465</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
+          <line>464</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
-          <line>345</line>
+          <line>347</line>
           <properties class="MapBuilder" method="hasPathBfs">
             <option name="EMULATED" value="true" />
           </properties>

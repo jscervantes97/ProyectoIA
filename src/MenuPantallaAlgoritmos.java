@@ -109,7 +109,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
         radio3.addChangeListener(this);
         radio3.setBounds(250,1,200,20);
         add(radio3);
-        radio4=new JRadioButton("Algoritmo Dikjstra");
+        radio4=new JRadioButton("Algoritmo A*");
         radio4.addChangeListener(this);
         radio4.setBounds(450,1,250,20);
         add(radio4);
@@ -131,12 +131,14 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             String destino=(String)comboBoxDestino.getSelectedItem();
             String comparar=(String)comboBoxComparacion.getSelectedItem();
             MapBuilder.distancia = 0;
+            MapBuilder.ciudadesRecorridas.clear();
+            List<String> lista = new ArrayList<>();
+            String Texto = "";
             long tiempoInicio=System.currentTimeMillis();
             if(opcionComparar == 1){
                 System.out.print(MapBuilder.distancia);
+                System.out.println(MapBuilder.getGraph());
                 Boolean llego = MapBuilder.hasPathBfs(origen,destino);
-                List<String> lista = new ArrayList<>();
-                String Texto = "";
                 lista.add("Total de Ciudades Visitadas: " + (MapBuilder.ciudadesRecorridas.size()-1));
                 for(String recorrido : MapBuilder.ciudadesRecorridas){
                     lista.add(recorrido);
@@ -152,8 +154,6 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             else if(opcionComparar == 2){
                 System.out.print(MapBuilder.distancia);
                 Boolean llego = MapBuilder.hasPathDfs(origen,destino);
-                List<String> lista = new ArrayList<>();
-                String Texto = "";
                 lista.add("Total de Ciudades Visitadas: " + (MapBuilder.ciudadesRecorridas.size()-1));
                 for(String recorrido : MapBuilder.ciudadesRecorridas){
                     lista.add(recorrido);
@@ -166,13 +166,25 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 consola.setText(Texto);
                 muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
             }
+            else if(opcionComparar == 4){
+                System.out.print(MapBuilder.distancia);
+                MapBuilder.hasAstartPath(origen,destino);
+                lista.add("Total de Ciudades Visitadas: " + (MapBuilder.ciudadesRecorridas.size()-1));
+                for(String recorrido : MapBuilder.ciudadesRecorridas){
+                    lista.add(recorrido);
+                }
+                lista.add("Total de KM recorridos: " + MapBuilder.distancia);
+                for(String impresion : lista){
+                    Texto += impresion + "\n";
+                }
+                consola.setText(Texto);
+                muestraResultados.setText(imprimeResultados(nombreAlgoritmo,comparar,origen,destino,MapBuilder.distancia));
+            }
             else if(opcionComparar == 5){
                 //System.out.print(MapBuilder.distancia);
                 //MapBuilder.aux = MapBuilder.instance;
                 MapBuilder.instance.ordenarRutas();
                 Boolean llego = MapBuilder.hasPathBfsMejorado(origen,destino);
-                List<String> lista = new ArrayList<>();
-                String Texto = "";
                 lista.add("Total de Ciudades Visitadas: " + (MapBuilder.ciudadesRecorridas.size()-1));
                 for(String recorrido : MapBuilder.ciudadesRecorridas){
                     lista.add(recorrido);
@@ -212,6 +224,11 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
                 MapBuilder.hasPathDfs(origen,destino);
                 resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + distanciaOriginal + "Km Distancia Recorrida por: " + nombreAlgoritmoComparar + " " + MapBuilder.distancia + " Km";
             break;
+            case "A*":
+                MapBuilder.distancia = 0 ;
+                MapBuilder.hasAstartPath(origen,destino);
+                resultados = "Distancia Recorrida por: " + nombreAlgoritmo + " " + distanciaOriginal + "Km Distancia Recorrida por: " + nombreAlgoritmoComparar + " " + MapBuilder.distancia + " Km";
+                break;
             case "BFS MEJORADO":
                 MapBuilder.distancia = 0 ;
                 MapBuilder.instance.ordenarRutas();
@@ -256,7 +273,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             comboBoxComparacion.addItem("NINGUNO");
             comboBoxComparacion.addItem("DFS");
             comboBoxComparacion.addItem("BRANCH AND BOUND");
-            comboBoxComparacion.addItem("DIJKSTRA");
+            comboBoxComparacion.addItem("A*");
             comboBoxComparacion.addItem("BFS MEJORADO");
         }
         if(radio2.isSelected()){
@@ -267,7 +284,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             comboBoxComparacion.addItem("NINGUNO");
             comboBoxComparacion.addItem("BFS");
             comboBoxComparacion.addItem("BRANCH AND BOUND");
-            comboBoxComparacion.addItem("DIJKSTRA");
+            comboBoxComparacion.addItem("A*");
             comboBoxComparacion.addItem("BFS MEJORADO");
         }
         if(radio3.isSelected()){
@@ -278,12 +295,12 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             comboBoxComparacion.addItem("NINGUNO");
             comboBoxComparacion.addItem("BFS");
             comboBoxComparacion.addItem("DFS");
-            comboBoxComparacion.addItem("DIJKSTRA");
+            comboBoxComparacion.addItem("A*");
             comboBoxComparacion.addItem("BFS MEJORADO");
         }
         if(radio4.isSelected()) {
             opcionComparar = 4;
-            nombreAlgoritmo = "DIJKSTRA";
+            nombreAlgoritmo = "A*";
             labelComparar.setText("Algoritmo Seleccionado: " + nombreAlgoritmo);
             comboBoxComparacion.removeAllItems();
             comboBoxComparacion.addItem("NINGUNO");
@@ -301,7 +318,7 @@ public class MenuPantallaAlgoritmos extends JFrame implements ActionListener, Ch
             comboBoxComparacion.addItem("BFS");
             comboBoxComparacion.addItem("DFS");
             comboBoxComparacion.addItem("BRANCH AND BOUND");
-            comboBoxComparacion.addItem("DIJKSTRA");
+            comboBoxComparacion.addItem("A*");
         }
     }
 

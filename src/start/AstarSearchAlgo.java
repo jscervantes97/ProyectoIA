@@ -130,8 +130,14 @@ public class AstarSearchAlgo{
         List<Node> path = printPath(n13);
 
         System.out.println("Path: " + path);
-
-
+        double sumatoria = 0 ;
+        double suma2 = 0;
+        for(Node nodos : path){
+            sumatoria += nodos.f_scores;
+            suma2 += nodos.g_scores;
+        }
+        System.out.println(sumatoria);
+        System.out.println(suma2);
     }
 
     public static List<Node> printPath(Node target){
