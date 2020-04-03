@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Node {
     private String city;
-    public Node parent;
     private List<Edge> adjacents = new ArrayList();
+    public Node parent;
     public double g_scores;
     public double h_scores;  //es la distancia que hay de una ciudad a otra
     public double f_scores = 0;
@@ -38,12 +38,7 @@ public class Node {
 
 
     public void ordenarMenorMayor(){
-        /*
-        Collections.sort(adjacents, (o1, o2) -> {
-            String st1 = String.valueOf(o1.getDistance());
-            String st2 = String.valueOf(o2.getDistance());
-            return st2.compareTo(st1);
-        });*/
+
         Collections.sort(adjacents);
     }
 

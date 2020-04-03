@@ -19,7 +19,7 @@ public class MapBuilder {
     private MapBuilder() {
         instance = getGraph();
         aux = getGraph();
-        System.out.println(instance);
+        //System.out.println(instance);
     }
 
     public static Graph getGraph() {
@@ -322,7 +322,6 @@ public class MapBuilder {
         ciudadesRecorridas.clear();
         aux = instance;
         //instance.ordenarRutas();
-
         Node start = getNode(source);
         Node end = getNode(destination);
         boolean band = false ;
@@ -337,7 +336,6 @@ public class MapBuilder {
         ciudadesRecorridas.clear();
         Node start = getNode(source);
         Node end = getNode(destination);
-
         if (start != null && end!= null) {
             return hasPathBfs(start, end);
         } else {
@@ -439,7 +437,6 @@ public class MapBuilder {
 
                                 /*else if child node is not in queue or
                                 newer f_score is lower*/
-
                 else if((!queue.contains(child)) ||
                         (temp_f_scores < child.f_scores)){
 
@@ -450,7 +447,6 @@ public class MapBuilder {
                     if(queue.contains(child)){
                         queue.remove(child);
                     }
-
                     queue.add(child);
 
                 }
