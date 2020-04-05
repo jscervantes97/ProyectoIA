@@ -25,7 +25,7 @@ public class Menu extends JFrame implements ActionListener {
         container.add(new JLabel("Integrantes del equipo",SwingConstants.CENTER));
         container.add(new JLabel("Jesus Alberto Cervantes Medina",SwingConstants.CENTER));
         container.add(new JLabel("Luis Alfredo Esparragoza Elenes",SwingConstants.CENTER));
-        container.add(new JLabel("Rosita del Carmen Guerrero Vazquez",SwingConstants.CENTER));
+        container.add(new JLabel("Rosa del Carmen Guerrero Vazquez",SwingConstants.CENTER));
         add(container,BorderLayout.CENTER);
         add(new JLabel("    "),BorderLayout.EAST);
         add(new JLabel("    "),BorderLayout.WEST);

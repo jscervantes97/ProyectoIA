@@ -29,7 +29,6 @@ public class Graph {
     }
 
     public void ordenarRutas(){
-
         for(Node nodo : nodes){
             //nodo.ordenarMenorMayor();
             nodo.ordenarMenorMayor();
