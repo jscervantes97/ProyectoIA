@@ -5,7 +5,7 @@
 import java.util.*;
 
 /**
- * @author raidentrance
+ * @author Chuy 7u7
  *
  */
 public class MapBuilder {
@@ -384,7 +384,7 @@ public class MapBuilder {
 
         PriorityQueue<Node> queue = new PriorityQueue<Node>(20,
                 new Comparator<Node>(){
-                    //override compare method
+
                     public int compare(Node i, Node j){
                         if(i.f_scores > j.f_scores){
                             return 1;
@@ -400,7 +400,6 @@ public class MapBuilder {
                 }
         );
 
-        //cost from start
         source.g_scores = 0;
 
         queue.add(source);
