@@ -43,7 +43,7 @@ public class Sudoku {
         return listaConvertida;
     }
 
-    public static int generarNumeroOuterJoin(ArrayList<Integer> leftJoin, ArrayList<Integer> righttJoin ){
+    public static int generarNumeroOuterJoin(ArrayList<Integer> leftJoin, ArrayList<Integer> righttJoin, Integer iterator ){
         ArrayList<Integer> innerJoin = new ArrayList<>();
         while(innerJoin.size() < 9){
             innerJoin.add(innerJoin.size()+1);
@@ -51,7 +51,12 @@ public class Sudoku {
         innerJoin.removeIf(n -> (leftJoin.contains(n)));
         innerJoin.removeIf(n -> (righttJoin.contains(n)));
         Random aleatorio = new Random();
-        return innerJoin.get(aleatorio.nextInt(innerJoin.size()));
+        System.out.println("Listas en la iteracion : " + iterator);
+        System.out.println(leftJoin );
+        System.out.println(righttJoin);
+        System.out.println(innerJoin);
+        int numeroGenerado = innerJoin.get(aleatorio.nextInt(innerJoin.size()));
+        return numeroGenerado;
     }
 
     public static void crearTableroResuelto(){
@@ -64,35 +69,30 @@ public class Sudoku {
         while(listaAux.size() < 9){
             listaAux.add(listaAux.size()+1);
         }
-        System.out.println("tamaño de la lista" + listaAux.size());
-        System.out.println("Poblacion generada ordenada "+ listaAux);
-        Collections.shuffle(listaAux);
-        System.out.println("Poblacion Generada Desordenada " + listaAux);
-        for(int j = 0 ; j < tablero[0].length; j++){
-            tablero[0][j] = listaAux.get(j);
-        }
         imprimirTablero(tablero);
         listaAux = obtenerFilatoList(tablero,0,false);
         Integer var_iterator = 0 ;
-        for(int j = 1 ; j < tablero[0].length; j++){
+        for(int j = 0 ; j < tablero[0].length; j++){
             while(listaAux2.size() < 9){
-                generado = aleatorio.nextInt(9)+1;
-                generado = aleatorio.nextInt(9)+1;
-                System.out.print(generado + " ");
+                generado = generarNumeroOuterJoin(listaAux,listaAux2,var_iterator);
                 if(!listaAux2.contains(generado) && !listaAux.contains(generado)){
                     listaAux2.add(generado);
                     tablero[j][var_iterator] = generado;
                     var_iterator++ ;
-                    if(var_iterator == 9){
-                        break;
+                    if(var_iterator != 9) {
+                        listaAux = obtenerFilatoList(tablero, var_iterator, false);
+                    }else {
+                        var_iterator = 0 ;
                     }
-                    listaAux = obtenerFilatoList(tablero,var_iterator,false);
                 }
-                System.out.println("Lista de momento " + listaAux2) ;
-                System.out.println("de arriba hacia abajo" + listaAux);
+                //System.out.println("Lista de momento " + listaAux2) ;
+                //System.out.println("de arriba hacia abajo" + listaAux);
             }
+            System.out.println("Vuelta numero: " + (j+1));
+            imprimirTablero(tablero);
             var_iterator = 0 ;
-            listaAux2.clear();;
+            listaAux2.clear();
+            listaAux.clear();
         }
         imprimirTablero(tablero);
         System.out.println("Llegue al fin??");
@@ -102,24 +102,8 @@ public class Sudoku {
     }
 
     public static void main(String[] args){
-        ArrayList<Integer> innerJoin = new ArrayList<>();
-        while(innerJoin.size() < 9){
-            innerJoin.add(innerJoin.size()+1);
-        }
-        ArrayList<Integer> outerJoin = new ArrayList<>();
-        outerJoin.add(1);
-        outerJoin.add(4);
-        outerJoin.add(6);
-        outerJoin.add(9);
-        innerJoin.removeIf(n -> (outerJoin.contains(n)));
-        //crearTableroResuelto();
-        /*
-        Random aleatorio = new Random();
-        int generado = 0 ;
-        while(generado != 9){
-            generado = aleatorio.nextInt(10);
-            System.out.println(generado);
-        }
+
+        crearTableroResuelto();
 
         int[][] tablero = new int[9][9];
         ArrayList<Integer> listaAux  = new ArrayList<>();
@@ -136,7 +120,7 @@ public class Sudoku {
         }
         System.out.println("tamaño de la lista" + listaAux.size());
         System.out.println("Poblacion Generada " + listaAux);
-        */
+
     }
 
 
