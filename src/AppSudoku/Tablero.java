@@ -80,7 +80,7 @@ public class Tablero {
         ArrayList<Integer> vectorArribaAbajo = new ArrayList<>();
         ArrayList<Integer> vectorIzquierdaDerecha = new ArrayList<>();
         Random aleatorio = new Random();
-        int generado = 0, var_iterator = 0, posicionArray = vectorGeneral.size();
+        int generado = 0, var_iterator = 0, posicionArray = vectorGeneral.size()-1;
         for(int j = 1 ; j < 9 ;j++){
             vectorArribaAbajo = obtenerFilatoList(var_iterator,false);
             while(vectorIzquierdaDerecha.size() < 9){
@@ -262,7 +262,6 @@ public class Tablero {
                 }
             }
         }
-        System.out.println(matrizAVector);
         return matrizAVector.contains(numero) ;
     }
 
