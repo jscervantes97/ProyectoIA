@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d383ce45-6b74-4bce-bfd5-0737fb134ffc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AppSudoku/Sudoku.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/AppSudoku/sudokuApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/Sudoku.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/Sudoku.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sudoku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/Tablero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/Tablero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppSudoku/sudokuApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppSudoku/sudokuApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,22 +128,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585550058008" />
-    <state width="1237" height="101" key="GridCell.Tab.0.bottom" timestamp="1588484174295">
+    <state width="1237" height="450" key="GridCell.Tab.0.bottom" timestamp="1588565169531">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="101" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588484174295" />
-    <state width="1237" height="101" key="GridCell.Tab.0.center" timestamp="1588484174295">
+    <state width="1237" height="450" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588565169531" />
+    <state width="1237" height="450" key="GridCell.Tab.0.center" timestamp="1588565169530">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="101" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588484174295" />
-    <state width="1237" height="101" key="GridCell.Tab.0.left" timestamp="1588484174294">
+    <state width="1237" height="450" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588565169530" />
+    <state width="1237" height="450" key="GridCell.Tab.0.left" timestamp="1588565169530">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="101" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588484174294" />
-    <state width="1237" height="101" key="GridCell.Tab.0.right" timestamp="1588484174295">
+    <state width="1237" height="450" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588565169530" />
+    <state width="1237" height="450" key="GridCell.Tab.0.right" timestamp="1588565169530">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="101" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588484174295" />
+    <state width="1237" height="450" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588565169530" />
     <state width="1237" height="352" key="GridCell.Tab.1.bottom" timestamp="1588262321067">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
