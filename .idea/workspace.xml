@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d383ce45-6b74-4bce-bfd5-0737fb134ffc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppSudoku/sudokuApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppSudoku/sudokuApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,22 +125,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585550058008" />
-    <state width="1237" height="128" key="GridCell.Tab.0.bottom" timestamp="1588568760364">
+    <state width="1237" height="297" key="GridCell.Tab.0.bottom" timestamp="1588645563428">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="128" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588568760364" />
-    <state width="1237" height="128" key="GridCell.Tab.0.center" timestamp="1588568760363">
+    <state width="1237" height="297" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588645563428" />
+    <state width="1237" height="297" key="GridCell.Tab.0.center" timestamp="1588645563427">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="128" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588568760363" />
-    <state width="1237" height="128" key="GridCell.Tab.0.left" timestamp="1588568760363">
+    <state width="1237" height="297" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588645563427" />
+    <state width="1237" height="297" key="GridCell.Tab.0.left" timestamp="1588645563427">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="128" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588568760363" />
-    <state width="1237" height="128" key="GridCell.Tab.0.right" timestamp="1588568760363">
+    <state width="1237" height="297" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588645563427" />
+    <state width="1237" height="297" key="GridCell.Tab.0.right" timestamp="1588645563428">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="128" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588568760363" />
+    <state width="1237" height="297" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588645563428" />
     <state width="1237" height="128" key="GridCell.Tab.1.bottom" timestamp="1588568760364">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -280,7 +278,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>109</line>
+          <line>111</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

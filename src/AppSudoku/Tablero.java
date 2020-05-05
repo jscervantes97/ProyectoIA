@@ -6,9 +6,11 @@ import java.util.Random;
 public class Tablero {
     private Integer[][] tablero;
     private ArrayList<Integer> vectorGeneral ;
+    private ArrayList<Integer> amplitudes ;
     public Tablero(int alto,int ancho){
         this.tablero = new Integer[alto][ancho];
         this.vectorGeneral = new ArrayList<>();
+        this.amplitudes = new ArrayList<>();
         generarNuevoTablero(alto,ancho);
     }
 
@@ -276,6 +278,7 @@ public class Tablero {
             }
             System.out.print(" " + numeroAmplitud);
             System.out.println("");
+            amplitudes.add(numeroAmplitud);
             numeroAmplitud = 0 ;
         }
     }
