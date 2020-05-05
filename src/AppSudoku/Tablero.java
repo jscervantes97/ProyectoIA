@@ -1,6 +1,5 @@
 package AppSudoku;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -265,4 +264,24 @@ public class Tablero {
         return matrizAVector.contains(numero) ;
     }
 
+    public void calcularAmplitudMatriz(){
+        System.out.println("-------Inicia Calculo de Matriz-------");
+        Integer numeroAmplitud = 0  ;
+        for(int j = 0 ; j < tablero[0].length;  j++){
+            for(int i = 0 ; i < tablero[0].length;  i++){
+                System.out.print(tablero[j][i] + " ");
+                if(tablero[j][i] == 0){
+                    numeroAmplitud ++ ;
+                }
+            }
+            System.out.print(" " + numeroAmplitud);
+            System.out.println("");
+            numeroAmplitud = 0 ;
+        }
+    }
+
+
+    public Integer[][] getTablero(){
+        return this.tablero;
+    }
 }

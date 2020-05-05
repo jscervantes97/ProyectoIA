@@ -8,6 +8,7 @@ public class sudokuApplication {
         tablero.generarPrimerPoblacion();
         tablero.imprimirTablero();
         tablero.generarPoblaciones();
+        tablero.calcularAmplitudMatriz();
     }
 
 }
