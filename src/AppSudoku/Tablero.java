@@ -1,16 +1,20 @@
 package AppSudoku;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Tablero {
     private Integer[][] tablero;
+    private Integer[][] nuevaGeneracion ;
     private ArrayList<Integer> vectorGeneral ;
     private ArrayList<Integer> amplitudes ;
+    private ArrayList<Integer> ganadores ;
     public Tablero(int alto,int ancho){
         this.tablero = new Integer[alto][ancho];
         this.vectorGeneral = new ArrayList<>();
         this.amplitudes = new ArrayList<>();
+        this.ganadores = new ArrayList<>();
         generarNuevoTablero(alto,ancho);
     }
 
@@ -105,7 +109,7 @@ public class Tablero {
             vectorIzquierdaDerecha.clear();
             imprimirTablero();
         }
-
+        nuevaGeneracion = tablero ;
     }
 
     public boolean estaEn3X3(Integer numero, Integer posicion){
@@ -281,6 +285,57 @@ public class Tablero {
             amplitudes.add(numeroAmplitud);
             numeroAmplitud = 0 ;
         }
+    }
+
+    public Integer generarGanador(int posicion){
+        int numero1 = amplitudes.get(posicion);
+        int numero2 = 0;
+        int numero3 = 0;
+        int posicion2 = 0 ;
+        int posicion3 = 0 ;
+        Integer ganador = 0 ;
+        if(posicion < 5){
+           numero2 =amplitudes.get(posicion+2);
+           numero3 =amplitudes.get(posicion+4);
+           posicion2 = posicion+2 ;
+           posicion3 = posicion+4 ;
+        }else{
+            numero2 =amplitudes.get(posicion-2);
+            numero3 =amplitudes.get(posicion-4);
+            posicion2 = posicion-2 ;
+            posicion3 = posicion-4 ;
+        }
+        if(numero1 >= numero2){
+            if(numero1 >= numero3){
+                ganador = posicion  ;
+            }
+        }
+        else if(numero2 >= numero3) {
+            ganador =  posicion2 ;
+        }else
+        {
+            ganador =  posicion3;
+        }
+        return ganador ;
+    }
+
+    public void realizarTorneo(){
+        for(int j = 0 ; j < 9 ; j++){
+            ganadores.add(generarGanador(j));
+        }
+    }
+
+    public void imprimirTableroFull(){
+        System.out.println("============Inicia Impresion de Tablero============");
+        for(int j = 0 ; j < tablero[0].length; j++){
+            for(int i = 0 ; i <  tablero[0].length ; i++){
+                System.out.print(tablero[j][i] + " ");
+            }
+            System.out.print("Amplitud " + amplitudes.get(j) + "  ");
+            System.out.print("Ganador " + ganadores.get(j) + " ");
+            System.out.println();
+        }
+        System.out.println("===================================================");
     }
 
 
