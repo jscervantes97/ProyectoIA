@@ -10,7 +10,8 @@ public class sudokuApplication {
         tablero.generarPoblaciones();
         tablero.calcularAmplitudMatriz();
         tablero.realizarTorneo();
-        tablero.imprimirTableroFull();
+        tablero.imprimirTableroFull(tablero.getTablero());
+        tablero.llenarNuevaMatriz();
     }
 
 }

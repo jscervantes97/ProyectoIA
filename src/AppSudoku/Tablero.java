@@ -325,7 +325,18 @@ public class Tablero {
         }
     }
 
-    public void imprimirTableroFull(){
+    public void llenarNuevaMatriz(){
+        ArrayList<Integer> izquierdaDerecha = new ArrayList<>();
+        for(int j = 0 ; j < ganadores.size(); j++){
+            izquierdaDerecha = obtenerFilatoList(ganadores.get(j),true);
+            for(int k = 0; k < izquierdaDerecha.size(); k++){
+                nuevaGeneracion[j][k] = izquierdaDerecha.get(k);
+            }
+        }
+        imprimirTableroFull(nuevaGeneracion);
+    }
+
+    public void imprimirTableroFull(Integer[][] tablero){
         System.out.println("============Inicia Impresion de Tablero============");
         for(int j = 0 ; j < tablero[0].length; j++){
             for(int i = 0 ; i <  tablero[0].length ; i++){
@@ -341,5 +352,9 @@ public class Tablero {
 
     public Integer[][] getTablero(){
         return this.tablero;
+    }
+
+    public Integer[][] getNuevaGeneracion(){
+        return this.nuevaGeneracion;
     }
 }

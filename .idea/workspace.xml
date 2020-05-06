@@ -127,38 +127,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585550058008" />
-    <state width="1237" height="442" key="GridCell.Tab.0.bottom" timestamp="1588651191434">
+    <state width="1237" height="128" key="GridCell.Tab.0.bottom" timestamp="1588731694226">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="442" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588651191434" />
-    <state width="1237" height="442" key="GridCell.Tab.0.center" timestamp="1588651191433">
+    <state width="1237" height="128" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588731694226" />
+    <state width="1237" height="128" key="GridCell.Tab.0.center" timestamp="1588731694226">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="442" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588651191433" />
-    <state width="1237" height="442" key="GridCell.Tab.0.left" timestamp="1588651191433">
+    <state width="1237" height="128" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588731694226" />
+    <state width="1237" height="128" key="GridCell.Tab.0.left" timestamp="1588731694225">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="442" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588651191433" />
-    <state width="1237" height="442" key="GridCell.Tab.0.right" timestamp="1588651191433">
+    <state width="1237" height="128" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588731694225" />
+    <state width="1237" height="128" key="GridCell.Tab.0.right" timestamp="1588731694226">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="442" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588651191433" />
-    <state width="1237" height="128" key="GridCell.Tab.1.bottom" timestamp="1588568760364">
+    <state width="1237" height="128" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588731694226" />
+    <state width="1237" height="128" key="GridCell.Tab.1.bottom" timestamp="1588731694794">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="128" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588568760364" />
-    <state width="1237" height="128" key="GridCell.Tab.1.center" timestamp="1588568760364">
+    <state width="1237" height="128" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588731694794" />
+    <state width="1237" height="128" key="GridCell.Tab.1.center" timestamp="1588731694794">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="128" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1588568760364" />
-    <state width="1237" height="128" key="GridCell.Tab.1.left" timestamp="1588568760364">
+    <state width="1237" height="128" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1588731694794" />
+    <state width="1237" height="128" key="GridCell.Tab.1.left" timestamp="1588731694794">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="128" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1588568760364" />
-    <state width="1237" height="128" key="GridCell.Tab.1.right" timestamp="1588568760364">
+    <state width="1237" height="128" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1588731694794" />
+    <state width="1237" height="128" key="GridCell.Tab.1.right" timestamp="1588731694794">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="128" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1588568760364" />
+    <state width="1237" height="128" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1588731694794" />
     <state width="647" height="347" key="XDebugger.FullValuePopup" timestamp="1585726725298">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -283,6 +283,11 @@
           <line>115</line>
           <option name="timeStamp" value="62" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
+          <line>290</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
           <line>345</line>
@@ -298,6 +303,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
+          <line>289</line>
+          <properties class="AppSudoku.Tablero" method="generarGanador">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
