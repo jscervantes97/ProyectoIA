@@ -7,16 +7,20 @@ import java.util.Random;
 public class Tablero {
     private Integer[][] tablero;
     private Integer[][] nuevaGeneracion ;
+    private Integer[][] original ;
     private ArrayList<Integer> vectorGeneral ;
     private ArrayList<Integer> amplitudes ;
     private ArrayList<Integer> ganadores ;
     private Double porcentajeCruza ;
-    public Tablero(int alto,int ancho,Double porcentajeCruza){
+    private Double porcentajeMutacion;
+    public Tablero(int alto,int ancho,Double porcentajeCruza,Double porcentajeMutacion){
         this.tablero = new Integer[alto][ancho];
+        original = tablero ;
         this.vectorGeneral = new ArrayList<>();
         this.amplitudes = new ArrayList<>();
         this.ganadores = new ArrayList<>();
         generarNuevoTablero(alto,ancho);
+        this.porcentajeMutacion = porcentajeMutacion ;
         this.porcentajeCruza = porcentajeCruza ; 
     }
 
@@ -36,6 +40,7 @@ public class Tablero {
             tablero[0][j] = listaAux.get(j);
             vectorGeneral.add(listaAux.get(j));
         }
+        original = tablero ;
     }
 
     public void imprimirTablero(){
@@ -123,7 +128,7 @@ public class Tablero {
             }
             var_iterator = 0 ;
             vectorIzquierdaDerecha.clear();
-            imprimirTablero();
+            //imprimirTablero();
         }
         nuevaGeneracion = tablero ;
     }
@@ -287,6 +292,7 @@ public class Tablero {
     }
 
     public void calcularAmplitudMatriz(){
+        amplitudes.clear();
         Integer numeroAmplitud = 0  ;
         for(int j = 0 ; j < tablero[0].length;  j++){
             for(int i = 0 ; i < tablero[0].length;  i++){
@@ -301,37 +307,27 @@ public class Tablero {
 
     public Integer generarGanador(int posicion){
         int numero1 = amplitudes.get(posicion);
-        int numero2 = 0;
-        int numero3 = 0;
+        int numero2 = 0 ;
         int posicion2 = 0 ;
-        int posicion3 = 0 ;
         Integer ganador = 0 ;
-        if(posicion < 5){
-           numero2 =amplitudes.get(posicion+2);
-           numero3 =amplitudes.get(posicion+4);
-           posicion2 = posicion+2 ;
-           posicion3 = posicion+4 ;
-        }else{
-            numero2 =amplitudes.get(posicion-2);
-            numero3 =amplitudes.get(posicion-4);
-            posicion2 = posicion-2 ;
-            posicion3 = posicion-4 ;
+        if(posicion == 8){
+            numero2 = amplitudes.get(posicion-1);
+            posicion2 = posicion - 1;
         }
-        if(numero1 >= numero2){
-            if(numero1 >= numero3){
-                ganador = posicion  ;
-            }
+        else{
+            numero2 = amplitudes.get(posicion+1);
+            posicion2 = posicion + 1;
         }
-        else if(numero2 >= numero3) {
-            ganador =  posicion2 ;
-        }else
-        {
-            ganador =  posicion3;
+        if(numero1 > numero2){
+            ganador = posicion ;
+        }else {
+            ganador = posicion2 ;
         }
         return ganador ;
     }
 
     public void realizarTorneo(){
+        ganadores.clear();
         for(int j = 0 ; j < 9 ; j++){
             ganadores.add(generarGanador(j));
         }
@@ -387,15 +383,85 @@ public class Tablero {
             }
             listaDeArreglos.add(hijo1);
             listaDeArreglos.add(hijo2);
-        };
+        }
+        /*
+        System.out.println("----MATRIZ SIN MUTAR-------");
+        for(Integer[] iterator:listaDeArreglos){
+            for(int j = 0 ; j < iterator.length; j++){
+                System.out.print(iterator[j] + " ");
+            }
+            System.out.println();
+        }*/
+        int var_iterator = 0 ;
+        ArrayList<Integer> izquierdaDerecha = new ArrayList<>();
+        ArrayList<Integer> arribaAbajo = new ArrayList<>();
+        Double psg = 0.0 ;
+        for(Integer[] iterator:listaDeArreglos){
+            psg = rd.nextDouble();
+            if(psg > porcentajeMutacion){
+                Integer numeroGenerado = rd.nextInt(8) + 1 ;
+                Integer pos = rd.nextInt(9);
+                izquierdaDerecha = obtenerFilatoList(listaReproductores.get(var_iterator),true);
+                arribaAbajo = obtenerFilatoList(pos,false);
+                Integer posicionMatricial = obtenerPosicionMatricial(var_iterator,pos);
+                if(izquierdaDerecha.contains(numeroGenerado) || arribaAbajo.contains(numeroGenerado) || estaEn3X3(numeroGenerado,posicionMatricial)){
+                    iterator[pos] = 0  ;
+                }else {
+                    iterator[pos] = numeroGenerado ;
+                }
+            }
+            var_iterator++;
+        }
+        /*
+        System.out.println("----MATRIZ MUTADA-------");
         for(Integer[] iterator:listaDeArreglos){
             for(int j = 0 ; j < iterator.length; j++){
                 System.out.print(iterator[j] + " ");
             }
             System.out.println();
         }
+
+        System.out.println("----Matriz Anterior------");
+        imprimirTablero();*/
+        // pasando datos de la matriz antiwa a la nueva
+        var_iterator = 0 ;
+        for(Integer[] iterator:listaDeArreglos){
+            for(int j = 0 ; j < iterator.length; j++){
+                tablero[listaReproductores.get(var_iterator)][j] = iterator[j];
+            }
+            var_iterator++;
+        }
+        /*
+        System.out.println("----Matriz Mutada Full HD------");
+        imprimirTablero();
+
+         */
     }
 
+    public Integer obtenerPosicionMatricial(Integer x, Integer y){
+        Integer posicion= 0 ;
+        for(int j = 0 ; j < tablero[0].length ; j++){
+            for(int i = 0 ; i < tablero[0].length ; i++){
+                posicion++;
+                if(x == j && y == i){
+                    break;
+                }
+            }
+        }
+        return posicion ;
+
+    }
+
+    public void imprimeSudokuOriginal(){
+        System.out.println("============Inicia Impresion de Tablero Original============");
+        for(int j = 0 ; j < original[0].length; j++){
+            for(int i = 0 ; i <  original[0].length ; i++){
+                System.out.print(original[j][i] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("===================================================");
+    }
 
 
     public void imprimirTableroFull(){
@@ -418,5 +484,9 @@ public class Tablero {
 
     public Integer[][] getNuevaGeneracion(){
         return this.nuevaGeneracion;
+    }
+
+    public Integer[][] getOriginal(){
+        return this.original ;
     }
 }
