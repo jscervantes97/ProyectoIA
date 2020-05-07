@@ -10,12 +10,14 @@ public class Tablero {
     private ArrayList<Integer> vectorGeneral ;
     private ArrayList<Integer> amplitudes ;
     private ArrayList<Integer> ganadores ;
-    public Tablero(int alto,int ancho){
+    private Double porcentajeCruza ;
+    public Tablero(int alto,int ancho,Double porcentajeCruza){
         this.tablero = new Integer[alto][ancho];
         this.vectorGeneral = new ArrayList<>();
         this.amplitudes = new ArrayList<>();
         this.ganadores = new ArrayList<>();
         generarNuevoTablero(alto,ancho);
+        this.porcentajeCruza = porcentajeCruza ; 
     }
 
     public void generarPrimerPoblacion(){
@@ -78,6 +80,20 @@ public class Tablero {
             }
         }
         return listaConvertida;
+    }
+
+    public Integer[] obtenerFiloToArray(int origen,boolean izquierdaDerecha){
+        Integer[] arreglo = new Integer[9];
+        if(izquierdaDerecha){
+            for(int j = 0; j < this.tablero[0].length; j++){
+                arreglo[j] = this.tablero[origen][j];
+            }
+        }else{
+            for(int j = 0; j < this.tablero[0].length; j++){
+                arreglo[j] = this.tablero[j][origen];
+            }
+        }
+        return arreglo ;
     }
 
     public void generarPoblaciones(){
@@ -271,17 +287,13 @@ public class Tablero {
     }
 
     public void calcularAmplitudMatriz(){
-        System.out.println("-------Inicia Calculo de Matriz-------");
         Integer numeroAmplitud = 0  ;
         for(int j = 0 ; j < tablero[0].length;  j++){
             for(int i = 0 ; i < tablero[0].length;  i++){
-                System.out.print(tablero[j][i] + " ");
                 if(tablero[j][i] == 0){
                     numeroAmplitud ++ ;
                 }
             }
-            System.out.print(" " + numeroAmplitud);
-            System.out.println("");
             amplitudes.add(numeroAmplitud);
             numeroAmplitud = 0 ;
         }
@@ -333,16 +345,66 @@ public class Tablero {
                 nuevaGeneracion[j][k] = izquierdaDerecha.get(k);
             }
         }
-        imprimirTableroFull(nuevaGeneracion);
+        tablero = nuevaGeneracion ;
     }
 
-    public void imprimirTableroFull(Integer[][] tablero){
+    public void cruzar7u7(){
+        ArrayList<Integer> listaReproductores = new ArrayList<>();
+        ArrayList<Integer[]> listaDeArreglos = new ArrayList<>();
+        double porcentaje = 0.0;
+        Random rd = new Random();
+        for(int i = 0 ; i < tablero[0].length; i++){
+            porcentaje = rd.nextDouble();
+            if(porcentaje > porcentajeCruza){
+                listaReproductores.add(i);
+            }
+        }
+        if(listaReproductores.size()%2!=0)
+        {
+            listaReproductores.remove(listaReproductores.size()-1);
+        }
+        System.out.println(listaReproductores);
+        for(int j = 0 ; j < listaReproductores.size(); j=j+2){
+            Integer[] padre1 = obtenerFiloToArray(j,true);
+            Integer[] padre2 = obtenerFiloToArray(j+1,true);
+            Integer[] hijo1 = new Integer[9];
+            Integer[] hijo2 = new Integer[9];
+            Integer[] aux1 = new Integer[9];
+            Integer[] aux2 = new Integer[9];
+            Integer punto = rd.nextInt(6) + 1 ;
+            for(int i = 0; i < 9; i++) {
+                aux1[i] = padre1[i];
+                aux2[i] = padre2[i];
+
+                if (i <= punto) {
+                    aux1[i] = padre2[i];
+                    aux2[i] = padre1[i];
+                }
+            }
+            for(int i = 0; i <9; i++) {
+                hijo1[i] = aux1[i];
+                hijo2[i] = aux2[i];
+            }
+            listaDeArreglos.add(hijo1);
+            listaDeArreglos.add(hijo2);
+        };
+        for(Integer[] iterator:listaDeArreglos){
+            for(int j = 0 ; j < iterator.length; j++){
+                System.out.print(iterator[j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
+    public void imprimirTableroFull(){
         System.out.println("============Inicia Impresion de Tablero============");
         for(int j = 0 ; j < tablero[0].length; j++){
             for(int i = 0 ; i <  tablero[0].length ; i++){
                 System.out.print(tablero[j][i] + " ");
             }
-            System.out.print("Amplitud " + amplitudes.get(j) + "  ");
+            System.out.print("Aptitud " + amplitudes.get(j) + "  ");
             System.out.print("Ganador " + ganadores.get(j) + " ");
             System.out.println();
         }
