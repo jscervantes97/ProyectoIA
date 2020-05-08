@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d383ce45-6b74-4bce-bfd5-0737fb134ffc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jcommon_1_0_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart_1_5_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoIA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoIA.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/Tablero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/Tablero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/sudokuApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/sudokuApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" afterDir="false" />
@@ -34,9 +37,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="227" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jcommon-1.0.24.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.sudokuApplication">
     <configuration name="GraphExampleApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -117,34 +121,34 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="233" y="0" key="#Project_Structure" timestamp="1583900085018">
+    <state x="233" y="0" key="#Project_Structure" timestamp="1588918709727">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1583900085018" />
+    <state x="233" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1588918709727" />
     <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1585811701241">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1585811701241" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1585550058008">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1588918707466">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585550058008" />
-    <state width="1237" height="266" key="GridCell.Tab.0.bottom" timestamp="1588915362758">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1588918707466" />
+    <state width="1237" height="396" key="GridCell.Tab.0.bottom" timestamp="1588920212899">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="266" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588915362758" />
-    <state width="1237" height="266" key="GridCell.Tab.0.center" timestamp="1588915362757">
+    <state width="1237" height="396" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588920212899" />
+    <state width="1237" height="396" key="GridCell.Tab.0.center" timestamp="1588920212898">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="266" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588915362757" />
-    <state width="1237" height="266" key="GridCell.Tab.0.left" timestamp="1588915362757">
+    <state width="1237" height="396" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588920212898" />
+    <state width="1237" height="396" key="GridCell.Tab.0.left" timestamp="1588920212898">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="266" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588915362757" />
-    <state width="1237" height="266" key="GridCell.Tab.0.right" timestamp="1588915362757">
+    <state width="1237" height="396" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588920212898" />
+    <state width="1237" height="396" key="GridCell.Tab.0.right" timestamp="1588920212898">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="266" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588915362757" />
+    <state width="1237" height="396" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588920212898" />
     <state width="1237" height="140" key="GridCell.Tab.1.bottom" timestamp="1588915314431">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -286,27 +290,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>565</line>
+          <line>575</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>57</line>
+          <line>66</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>137</line>
+          <line>146</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>239</line>
+          <line>248</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>136</line>
+          <line>145</line>
           <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
@@ -319,7 +323,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>56</line>
+          <line>65</line>
           <properties class="AppSudoku.Tablero" method="imprimirPosicionesMatriz">
             <option name="EMULATED" value="true" />
           </properties>
@@ -327,7 +331,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>103</line>
+          <line>112</line>
           <properties class="AppSudoku.Tablero" method="generarPoblaciones">
             <option name="EMULATED" value="true" />
           </properties>

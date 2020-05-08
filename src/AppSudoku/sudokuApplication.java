@@ -21,7 +21,6 @@ public class sudokuApplication {
         tablero.imprimirTableroFull();
         tablero.realizarTorneo();
         tablero.imprimirTablero();
-        /*
         for(int j = 0 ; j < poblaciones -1 ; j++){
             tablero.generarPoblaciones();
             tablero.calcularAmplitudMatriz();
@@ -29,9 +28,8 @@ public class sudokuApplication {
             tablero.llenarNuevaMatriz();
             tablero.cruzar7u7();
         }
-        System.out.println("Tablero Final");
         tablero.imprimirTablero();
-         */
+        tablero.calcularResultados();
 
     }
 

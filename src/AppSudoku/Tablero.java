@@ -2,7 +2,13 @@ package AppSudoku;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Hashtable;
 import java.util.Random;
+import org.jfree.chart.*;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+
+import javax.swing.*;
 
 public class Tablero {
     private Integer[][] tablero;
@@ -11,14 +17,17 @@ public class Tablero {
     private ArrayList<Integer> vectorGeneral ;
     private ArrayList<Integer> amplitudes ;
     private ArrayList<Integer> ganadores ;
+    private ArrayList<Integer> listaTodasAptitudes ;
     private Double porcentajeCruza ;
     private Double porcentajeMutacion;
+    JFreeChart Grafica;
     public Tablero(int alto,int ancho,Double porcentajeCruza,Double porcentajeMutacion){
         this.tablero = new Integer[alto][ancho];
         original = tablero ;
         this.vectorGeneral = new ArrayList<>();
         this.amplitudes = new ArrayList<>();
         this.ganadores = new ArrayList<>();
+        this.listaTodasAptitudes = new ArrayList<>();
         generarNuevoTablero(alto,ancho);
         this.porcentajeMutacion = porcentajeMutacion ;
         this.porcentajeCruza = porcentajeCruza ; 
@@ -528,6 +537,7 @@ public class Tablero {
             }
             numeroAmplitud += cerosen3X3(j,listaUltimaPosiciones.get(j));
             amplitudes.add(numeroAmplitud);
+            listaTodasAptitudes.add(numeroAmplitud);
             numeroAmplitud = 0 ;
         }
     }
@@ -688,6 +698,39 @@ public class Tablero {
             System.out.println();
         }
         System.out.println("===================================================");
+    }
+
+    public void calcularResultados(){
+        ArrayList<Integer> aptitudes = new ArrayList<>();
+        ArrayList<Integer> puntajeAptitud = new ArrayList<>();
+        for(int j = 0 ; j < listaTodasAptitudes.size(); j++){
+            if(!aptitudes.contains(listaTodasAptitudes.get(j))){
+                aptitudes.add(listaTodasAptitudes.get(j));
+            }
+        }
+        Collections.sort(aptitudes);
+        Integer puntajePorAptitud = 0 ;
+        Hashtable<Integer,Integer> tablaPuntos = new Hashtable<>();
+        DefaultCategoryDataset Datos = new DefaultCategoryDataset();
+        for(int j = 0 ; j < aptitudes.size();j++){
+            for(int x = 0 ; x < listaTodasAptitudes.size(); x++){
+                if(aptitudes.get(j) == listaTodasAptitudes.get(x)){
+                    puntajePorAptitud++;
+                }
+            }
+            Datos.addValue(puntajePorAptitud,aptitudes.get(j),"Mejores Aptitudes");
+            puntajePorAptitud = 0;
+        }
+        Grafica = ChartFactory.createBarChart("Resultados Obtenidos",
+                "Mi", "Numero de Individuos con esa aptitud", Datos,
+                PlotOrientation.HORIZONTAL, true, true, false);
+        ChartPanel Panel = new ChartPanel(Grafica);
+        JFrame Ventana = new JFrame("Grafica Final");
+        Ventana.getContentPane().add(Panel);
+        Ventana.pack();
+        Ventana.setVisible(true);
+        Ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 
 
