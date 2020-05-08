@@ -291,15 +291,242 @@ public class Tablero {
         return matrizAVector.contains(numero) ;
     }
 
+    public Integer cerosen3X3(Integer numero, Integer posicion){
+        //ArrayList<Integer> matrizAVector = new ArrayList<>();
+        Integer aptitud = 0 ;
+        if((posicion >= 0 && posicion <= 2) || (posicion >= 9 && posicion <= 11) || (posicion >= 18 && posicion <= 20)){
+            if(posicion >= 0){
+                for(int j = 0 ; j <= 2; j++){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 9){
+                for(int j = 9 ; j <= 11 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 18){
+                for(int j = 18 ; j <= 20 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        else if((posicion >= 3 && posicion <= 5) || (posicion >= 12 && posicion <= 14) || (posicion >= 21 && posicion <= 23)){
+            if(posicion >= 3){
+                for(int j = 3 ; j <= 5 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 12){
+                for(int j = 12 ; j <= 14 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 21){
+                for(int j = 21 ; j <= 23 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        else if((posicion >= 6 && posicion <= 8) || (posicion >= 15 && posicion <= 17) || (posicion >= 24 && posicion <= 26)){
+            if(posicion >= 6){
+                for(int j = 6 ; j <= 8 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 15){
+                for(int j = 15 ; j <= 17 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 24){
+                for(int j = 24 ; j <= 26 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        else if((posicion >= 27 && posicion <= 29) || (posicion >= 36 && posicion <= 38) || (posicion >= 45 && posicion <= 47)){
+            if(posicion >= 27){
+                for(int j = 27 ; j <= 29 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 36){
+                for(int j = 36 ; j <= 38 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 45){
+                for(int j = 45 ; j <= 47 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        else if((posicion >= 30 && posicion <= 32) || (posicion >= 39 && posicion <= 41) || (posicion >= 48 && posicion <= 50)){
+            if(posicion >= 30){
+                for(int j = 30 ; j <= 32 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 39){
+                for(int j = 39 ; j <= 41 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 48){
+                for(int j = 48 ; j <= 50 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        else if((posicion >= 33 && posicion <= 35) || (posicion >= 42 && posicion <= 44) || (posicion >= 51 && posicion <= 53)){
+            if(posicion >= 33){
+                for(int j = 33 ; j <= 35 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 42){
+                for(int j = 44 ; j <= posicion ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 51){
+                for(int j = 51 ; j <= 53 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        else if((posicion >= 54 && posicion <= 56) || (posicion >= 63 && posicion <= 65) || (posicion >= 72 && posicion <= 74)){
+            if(posicion >= 54){
+                for(int j = 54 ; j <= 56 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 63){
+                for(int j = 63 ; j <= 65 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 72){
+                for(int j = 72 ; j <= 74 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        else if((posicion >= 57 && posicion <= 59) || (posicion >= 66 && posicion <= 68) || (posicion >= 75 && posicion <= 77)){
+            if(posicion >= 57){
+                for(int j = 57 ; j <= 59 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 66){
+                for(int j = 66 ; j <= 68 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 75){
+                for(int j = 75 ; j <= 77 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        else if((posicion >= 60 && posicion <= 62) || (posicion >= 69 && posicion <= 71) || (posicion >= 78 && posicion <= 80)){
+            if(posicion >= 60){
+                for(int j = 60 ; j <= 62 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 69){
+                for(int j = 69 ; j <= 71 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+            if(posicion >= 78){
+                for(int j = 78 ; j <= 80 ; j++ ){
+                    if(vectorGeneral.get(j) == 0){
+                        aptitud++;
+                    }
+                }
+            }
+        }
+        return aptitud;
+    }
+
     public void calcularAmplitudMatriz(){
         amplitudes.clear();
         Integer numeroAmplitud = 0  ;
+        Integer var_iterator = 0 ;
+        ArrayList<Integer> listaUltimaPosiciones = new ArrayList<>();
+        //contiene las posiciones de los elementos matriciales que representan el ultimo subcuadrito de abajo de una
+        //submatriz 3 * 3
+        listaUltimaPosiciones.add(20);
+        listaUltimaPosiciones.add(23);
+        listaUltimaPosiciones.add(26);
+        listaUltimaPosiciones.add(47);
+        listaUltimaPosiciones.add(50);
+        listaUltimaPosiciones.add(53);
+        listaUltimaPosiciones.add(74);
+        listaUltimaPosiciones.add(77);
+        listaUltimaPosiciones.add(80);
         for(int j = 0 ; j < tablero[0].length;  j++){
             for(int i = 0 ; i < tablero[0].length;  i++){
                 if(tablero[j][i] == 0){
                     numeroAmplitud ++ ;
                 }
             }
+            numeroAmplitud += cerosen3X3(j,listaUltimaPosiciones.get(j));
             amplitudes.add(numeroAmplitud);
             numeroAmplitud = 0 ;
         }
@@ -359,7 +586,7 @@ public class Tablero {
         {
             listaReproductores.remove(listaReproductores.size()-1);
         }
-        System.out.println(listaReproductores);
+        //System.out.println(listaReproductores);
         for(int j = 0 ; j < listaReproductores.size(); j=j+2){
             Integer[] padre1 = obtenerFiloToArray(j,true);
             Integer[] padre2 = obtenerFiloToArray(j+1,true);
@@ -471,10 +698,55 @@ public class Tablero {
                 System.out.print(tablero[j][i] + " ");
             }
             System.out.print("Aptitud " + amplitudes.get(j) + "  ");
-            System.out.print("Ganador " + ganadores.get(j) + " ");
+            //System.out.print("Ganador " + ganadores.get(j) + " ");
             System.out.println();
         }
         System.out.println("===================================================");
+    }
+
+    public static int generarNumeroOuterJoin(ArrayList<Integer> leftJoin, ArrayList<Integer> righttJoin, Integer iterator ){
+        ArrayList<Integer> innerJoin = new ArrayList<>();
+        while(innerJoin.size() < 9){
+            innerJoin.add(innerJoin.size()+1);
+        }
+        innerJoin.removeIf(n -> (leftJoin.contains(n)));
+        innerJoin.removeIf(n -> (righttJoin.contains(n)));
+        Random aleatorio = new Random();
+        System.out.println("Listas en la iteracion : " + iterator);
+        System.out.println(leftJoin );
+        System.out.println(righttJoin);
+        System.out.println(innerJoin);
+        int numeroGenerado = innerJoin.get(aleatorio.nextInt(innerJoin.size()));
+        return numeroGenerado;
+    }
+
+
+    public void generarPoblacionesResueltos(){
+        //son los vectores que se usan para saber que elementos hay por arriba y abajo
+        ArrayList<Integer> vectorArribaAbajo = new ArrayList<>();
+        ArrayList<Integer> vectorIzquierdaDerecha = new ArrayList<>();
+        Random aleatorio = new Random();
+        int generado = 0, var_iterator = 0, posicionArray = vectorGeneral.size()-1;
+        for(int j = 1 ; j < 9 ;j++){
+            vectorArribaAbajo = obtenerFilatoList(var_iterator,false);
+            while(vectorIzquierdaDerecha.size() < 9){
+                generado = generarNumeroOuterJoin(vectorArribaAbajo,vectorIzquierdaDerecha,var_iterator);
+                if(!vectorIzquierdaDerecha.contains(generado) && !vectorArribaAbajo.contains(generado) && !estaEn3X3(generado,posicionArray)){
+                    tablero[j][vectorIzquierdaDerecha.size()] = generado ;
+                    vectorIzquierdaDerecha.add(generado);
+                    vectorGeneral.add(generado);
+                    var_iterator++;
+                    posicionArray++;
+                    if(var_iterator < 9) {
+                        vectorArribaAbajo = obtenerFilatoList(var_iterator,false);
+                    }
+                }
+            }
+            var_iterator = 0 ;
+            vectorIzquierdaDerecha.clear();
+            imprimirTablero();
+        }
+        nuevaGeneracion = tablero ;
     }
 
 

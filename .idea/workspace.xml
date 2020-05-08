@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d383ce45-6b74-4bce-bfd5-0737fb134ffc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/Sudoku.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/Sudoku.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/Tablero.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/Tablero.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/sudokuApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoIA/AppSudoku/sudokuApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppSudoku/Sudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppSudoku/Sudoku.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppSudoku/Tablero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppSudoku/sudokuApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppSudoku/sudokuApplication.java" afterDir="false" />
     </list>
@@ -131,38 +129,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585550058008" />
-    <state width="1237" height="157" key="GridCell.Tab.0.bottom" timestamp="1588832425532">
+    <state width="1237" height="266" key="GridCell.Tab.0.bottom" timestamp="1588915362758">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="157" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588832425532" />
-    <state width="1237" height="157" key="GridCell.Tab.0.center" timestamp="1588832425532">
+    <state width="1237" height="266" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588915362758" />
+    <state width="1237" height="266" key="GridCell.Tab.0.center" timestamp="1588915362757">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="157" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588832425532" />
-    <state width="1237" height="157" key="GridCell.Tab.0.left" timestamp="1588832425532">
+    <state width="1237" height="266" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1588915362757" />
+    <state width="1237" height="266" key="GridCell.Tab.0.left" timestamp="1588915362757">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="157" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588832425532" />
-    <state width="1237" height="157" key="GridCell.Tab.0.right" timestamp="1588832425532">
+    <state width="1237" height="266" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1588915362757" />
+    <state width="1237" height="266" key="GridCell.Tab.0.right" timestamp="1588915362757">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="157" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588832425532" />
-    <state width="1237" height="432" key="GridCell.Tab.1.bottom" timestamp="1588739071206">
+    <state width="1237" height="266" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1588915362757" />
+    <state width="1237" height="140" key="GridCell.Tab.1.bottom" timestamp="1588915314431">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="432" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588739071206" />
-    <state width="1237" height="432" key="GridCell.Tab.1.center" timestamp="1588739071205">
+    <state width="1237" height="140" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1588915314431" />
+    <state width="1237" height="140" key="GridCell.Tab.1.center" timestamp="1588915314431">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="432" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1588739071205" />
-    <state width="1237" height="432" key="GridCell.Tab.1.left" timestamp="1588739071205">
+    <state width="1237" height="140" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1588915314431" />
+    <state width="1237" height="140" key="GridCell.Tab.1.left" timestamp="1588915314430">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="432" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1588739071205" />
-    <state width="1237" height="432" key="GridCell.Tab.1.right" timestamp="1588739071205">
+    <state width="1237" height="140" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1588915314430" />
+    <state width="1237" height="140" key="GridCell.Tab.1.right" timestamp="1588915314431">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="432" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1588739071205" />
+    <state width="1237" height="140" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1588915314431" />
     <state width="647" height="347" key="XDebugger.FullValuePopup" timestamp="1585726725298">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -288,7 +286,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
-          <line>338</line>
+          <line>565</line>
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -306,6 +304,11 @@
           <line>239</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/MapBuilder.java</url>
           <line>345</line>
@@ -321,6 +324,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/AppSudoku/Tablero.java</url>
+          <line>103</line>
+          <properties class="AppSudoku.Tablero" method="generarPoblaciones">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

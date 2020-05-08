@@ -13,9 +13,15 @@ public class sudokuApplication {
         System.out.println("Ingresa el porcentaje de Mutacion");
         Double porcentajeMutacion = lee.nextDouble() ;
         Tablero tablero = new Tablero(9,9,porcentajeCruza,porcentajeMutacion);
-        tablero.imprimirTablero();
+
         tablero.generarPrimerPoblacion();
+        //tablero.generarPoblacionesResueltos();
+        tablero.generarPoblaciones();
+        tablero.calcularAmplitudMatriz();
+        tablero.imprimirTableroFull();
+        tablero.realizarTorneo();
         tablero.imprimirTablero();
+        /*
         for(int j = 0 ; j < poblaciones -1 ; j++){
             tablero.generarPoblaciones();
             tablero.calcularAmplitudMatriz();
@@ -25,7 +31,8 @@ public class sudokuApplication {
         }
         System.out.println("Tablero Final");
         tablero.imprimirTablero();
-        tablero.imprimeSudokuOriginal();
+         */
+
     }
 
 }
